@@ -1,0 +1,10 @@
+---
+import Base from "./Base.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Base pageTitle={frontmatter.title}>
+  <p>Written by {frontmatter.author}</p>
+  <p>Published on {frontmatter.pubDate}</p>
+  <slot />
+</Base>
