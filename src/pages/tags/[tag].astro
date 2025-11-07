@@ -1,21 +1,27 @@
 ---
+import { getCollection } from "astro:content";
+
 import Base from "../../layouts/Base.astro";
 import BlogPost from "../../layouts/BlogPost.astro";
 
+// Static paths are required to be exported because the pages are
+// generated at build time!
 export async function getStaticPaths() {
-  const allPosts = Object.values(
-    import.meta.glob("../posts/*.md", { eager: true }),
-  );
+  const allPosts = await getCollection("blog");
 
   const uniqueTags = [
-    ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
   ];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post: any) =>
-      post.frontmatter.tags.includes(tag),
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag),
     );
+
     return {
+      // Since this dynamic page has the [tag], it has to be specified here.
+      // in the params.
+      // Il nome del file può contenere più robi: [nome]-[cognome] or [nome]/[cognome]
       params: { tag },
       props: { posts: filteredPosts },
     };
@@ -27,11 +33,12 @@ const { posts } = Astro.props;
 ---
 
 <Base pageTitle={tag}>
+  This is a dynamic page! Look at the file name.
   <p>Posts tagged with {tag}</p>
   <ul>
     {
-      posts.map((post: any) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+      posts.map((post) => (
+        <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
       ))
     }
   </ul>
