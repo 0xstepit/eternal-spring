@@ -1,21 +1,43 @@
 ---
 import "../styles/global.css";
 import Base from "../layouts/Base.astro";
-import BlogPost from "../layouts/BlogPost.astro";
+import PostCard from "../components/PostCard.astro";
+
+import { sortByDate } from "../scripts/posts";
 
 import { getCollection } from "astro:content";
 const allPosts = await getCollection("blog");
 
-const pageTitle = "Astro Blog";
+const sortedPosts = sortByDate({ posts: allPosts, order: "newest" });
+
+const pageTitle = "Blog";
 ---
 
 <Base pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
+  <h1>All posts</h1>
+  <ul class="posts-grid">
     {
-      allPosts.map((post: any) => (
-        <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
+      sortedPosts.map((post: any) => (
+        <PostCard
+          url={`/posts/${post.id}/`}
+          title={post.data.title}
+          date={post.data.date}
+          tags={post.data.tags}
+        />
       ))
     }
   </ul>
 </Base>
+
+<style>
+  /* Vertical list layout for cards */
+  .posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 2rem 0;
+    list-style: none;
+    max-width: 800px;
+  }
+</style>

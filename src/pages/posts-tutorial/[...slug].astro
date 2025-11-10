@@ -3,11 +3,11 @@ import { getCollection, render } from "astro:content";
 import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const postsTutorial = await getCollection("blog_tutorial");
 
-  console.log(`📝 Total blog posts: ${posts.length}`);
+  console.log(`📝 Total blog posts: ${postsTutorial.length}`);
 
-  return posts.map((post) => ({
+  return postsTutorial.map((post) => ({
     params: { slug: post.id },
     props: { post },
   }));

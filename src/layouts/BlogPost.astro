@@ -1,7 +1,18 @@
 ---
-const { url, title } = Astro.props;
+// Component Script (JavaScript)
+interface Props {
+  url: string;
+  title: string;
+  date: Date;
+}
+
+const { url, title, date } = Astro.props;
 ---
 
+<!-- Component Template (HTML + JS Expressions) -->{
+  /* JS comment syntax is also valid! */
+}
 <li>
   <a href={url}>{title}</a>
+  <p>{date}</p>
 </li>
