@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -10,21 +11,13 @@ const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
+  <Head pageTitle={pageTitle} />
   <body>
     <Header />
-
     <!-- Slot is where the content is inserted -->
     <slot />
-  </body>
-  <Footer />
-  <script>
+    <Footer />
+  </body><script>
     import "../scripts/menu.js";
   </script>
 </html>

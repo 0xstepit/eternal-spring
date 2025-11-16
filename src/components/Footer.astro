@@ -1,16 +1,12 @@
 ---
 import Social from "./Social.astro";
+import { SOCIAL_LINKS } from "@/blogConfig";
 ---
 
 <footer>
-  <Social platform="twitter" username="0xstepit" />
-  <Social platform="github" username="0xstepit" />
-</footer>
-
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+  {
+    SOCIAL_LINKS.map((social) => {
+      return <Social platform={social.platform} url={social.url} />;
+    })
   }
-</style>
+</footer>

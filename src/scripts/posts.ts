@@ -3,7 +3,7 @@ export function sortByDate<T extends { data: { date: Date } }>({
   order = "newest",
 }: {
   posts: T[];
-  order?: "newest" | "oldest";
+  order: "newest" | "oldest";
 }): T[] {
   const sortedPosts = [...posts].sort((a, b) => {
     const timeA = a.data.date.getTime();

@@ -1,10 +1,32 @@
 ---
-import "../styles/global.css";
+import { NAV_LINKS } from "@/blogConfig";
+
+const currentPath = Astro.url.pathname;
 ---
 
-<div id="main-menu" class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/tags/">Tags</a>
-</div>
+<nav>
+  <ul>
+    {
+      NAV_LINKS.map((link) => {
+        return (
+          <li>
+            <a
+              href={link.path}
+              class={currentPath === link.path ? "active" : ""}
+            >
+              {link.name}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<!-- <div id="main-menu" class="nav-links"> -->
+<!--   <a href="/">Home</a> -->
+<!--   <a href="/about/">About</a> -->
+<!--   <a href="/blog/">Blog</a> -->
+<!--   <a href="/tags/">Tags</a> -->
+<!--   <a href="https://github.com/0xstepit/eternal-spring">Github</a> -->
+<!-- </div> -->
