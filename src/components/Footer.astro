@@ -3,10 +3,20 @@ import Social from "./Social.astro";
 import { SOCIAL_LINKS } from "@/blogConfig";
 ---
 
-<footer>
-  {
-    SOCIAL_LINKS.map((social) => {
-      return <Social platform={social.platform} url={social.url} />;
-    })
-  }
+<footer class="footer">
+  <div class="footer-spacer footer-spacer--left">+</div>
+  <div class="footer-links">
+    {
+      SOCIAL_LINKS.map((social) => {
+        return (
+          <Social
+            platform={social.platform}
+            url={social.url}
+            svg={social.svg}
+          />
+        );
+      })
+    }
+  </div>
+  <div class="footer-spacer footer-spacer--right">+</div>
 </footer>

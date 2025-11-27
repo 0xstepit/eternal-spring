@@ -14,13 +14,14 @@ const pageTitle = "Blog";
 ---
 
 <Base pageTitle={pageTitle}>
-  <h1>All posts</h1>
-  <ul class="posts-grid">
+  <h2>All writings</h2>
+  <ul class="post-cards">
     {
       sortedPosts.map((post: any) => (
         <PostCard
-          url={`/posts/${post.id}/`}
+          url={`/blog/${post.id}/`}
           title={post.data.title}
+          summary={post.data.summary}
           date={post.data.date}
           tags={post.data.tags}
         />
@@ -28,16 +29,3 @@ const pageTitle = "Blog";
     }
   </ul>
 </Base>
-
-<style>
-  /* Vertical list layout for cards */
-  .posts-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0;
-    margin: 2rem 0;
-    list-style: none;
-    max-width: 800px;
-  }
-</style>

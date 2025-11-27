@@ -1,7 +1,7 @@
 ---
 title: "My First Blog Post"
 pubDate: 2022-07-01
-description: "This is the first post of my new Astro blog."
+summary: "This is the first post of my new Astro blog."
 author: "Stepit"
 slug: "post-1" # this override the id created
 relatedPosts:

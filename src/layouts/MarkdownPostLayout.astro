@@ -6,7 +6,7 @@ const { tags } = frontmatter.tags;
 
 <Base pageTitle={frontmatter.title}>
   <p>{frontmatter.pubDate.toLocaleDateString()}</p>
-  <p><em>{frontmatter.description}</em></p>
+  <p><em>{frontmatter.summary}</em></p>
   <p>Written by: {frontmatter.author}</p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 

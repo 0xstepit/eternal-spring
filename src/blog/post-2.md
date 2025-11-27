@@ -2,10 +2,11 @@
 author: Stefano Francesco Pitton
 title: "Cosmos SDK ABCI"
 slug: "cosmos-sdk-abci"
+summary: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 tags: []
 related: []
 created: 2025-07-29
-modified: 2025-11-09
+modified: 2025-11-26
 to-publish: false
 ---
 

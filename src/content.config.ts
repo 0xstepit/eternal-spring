@@ -11,7 +11,7 @@ const blog_tutorial = defineCollection({
     title: z.string(),
     author: z.string().default("Anonymous"),
     pubDate: z.date(),
-    description: z.string(),
+    summary: z.string(),
     image: z
       .object({
         url: z.string(),
@@ -28,6 +28,7 @@ const blog = defineCollection({
   schema: z
     .object({
       title: z.string(),
+      summary: z.string().default("Unfortunately no summary to display"),
       author: z.string().default("Anonymous"),
       modified: z.date(),
       tags: z.array(z.string()),

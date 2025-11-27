@@ -1,0 +1,14 @@
+---
+// Component Script (JavaScript)
+interface Props {
+  name: string;
+  path: string;
+}
+
+var { name, path } = Astro.props;
+name = name.toLocaleLowerCase().split(" ").join("-");
+---
+
+<a href={path} class="logo-link" }>
+  ~/.{name}
+</a>

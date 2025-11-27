@@ -1,26 +1,25 @@
 ---
 import { NAV_LINKS } from "@/blogConfig";
+import SecondaryNavigation from "./SecondaryNavigation.astro";
+import PrimaryNavigation from "./PrimaryNavigation.astro";
 
-const currentPath = Astro.url.pathname;
+const [logo, ...links] = NAV_LINKS;
 ---
 
-<nav>
-  <ul>
-    {
-      NAV_LINKS.map((link) => {
-        return (
-          <li>
-            <a
-              href={link.path}
-              class={currentPath === link.path ? "active" : ""}
-            >
-              {link.name}
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+<nav class="navigation">
+  <div class="navigation-logo">
+    <PrimaryNavigation name={logo.name} path={logo.path} />
+  </div>
+  <div class="navigation-links">
+    <ul class="navigation-list">
+      {
+        links.map((link) => {
+          return <SecondaryNavigation name={link.name} path={link.path} />;
+        })
+      }
+    </ul>
+  </div>
+  <div class="navigation-spacer">+</div>
 </nav>
 
 <!-- <div id="main-menu" class="nav-links"> -->

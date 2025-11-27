@@ -12,10 +12,13 @@ const { pageTitle } = Astro.props;
 
 <html lang="en">
   <Head pageTitle={pageTitle} />
-  <body>
+  <body class="body">
     <Header />
-    <!-- Slot is where the content is inserted -->
-    <slot />
+    <main class="l-main">
+      <div class="l-container">
+        <slot />
+      </div>
+    </main>
     <Footer />
   </body><script>
     import "../scripts/menu.js";
