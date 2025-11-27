@@ -3,84 +3,78 @@ import "../styles/global.css";
 
 import Base from "../layouts/Base.astro";
 
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "crimson";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const pageTitle = "About";
 ---
 
 <Base pageTitle={pageTitle}>
-  <h2>... and my new Astro site!</h2>
+  <h2>...Hey!</h2>
 
   <p>
-    I am working through Astro's introductory tutorial. This is the second page
-    on my website, and it's the first one I built myself!
+    Eternal Spring is a blog about random stuff I learn and experiment during my
+    working and free time. Expect to find writings about software design,
+    decentralized finance applciations, math, and martial arts.
   </p>
+
+  <br />
 
   <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
+    I'm Stefano, a software engineer based in Belrin working in the blockchain
+    industry. I contributed to <a
+      rel="stylesheet"
+      href="https://github.com/noble-assets/noble"
+    >
+      Noble Core</a
+    > a stablecoin app-specific chain, <a
+      rel="stylesheet"
+      href="https://github.com/evmos/evmos">evmos</a
+    > which is a chain module to integrate go-ethereum in a cosmos chain, the <a
+      rel="stylesheet"
+      href="https://github.com/cosmos/cosmos-sdk">Cosmos SDK</a
+    >, and build a bunch of nice things, amongst which, an abstraction layer on
+    top of IBC, CCTP, and Hyperlane called <a
+      rel="stylesheet"
+      href="https://github.com/noble-assets/orbiter">Orbiter</a
+    >. I'm interested in the cross-chain exchange of data, DeFi, and system
+    architecture.
   </p>
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>
-      I live in {identity.country} and I work as a {identity.occupation}.
-    </li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
 
-  {happy && <p>I am happy to be learning Astro!</p>}
+  <br />
 
-  {finished && <p>I finished this tutorial!</p>}
+  <p>
+    I like spending time creating my own things, and I like them to be simple
+    and minimal. This interest brought me to develop a keyboard and
+    terminal-centric worklow, mainly base on Neovim and Tmux. I'm so obsessed by
+    personal tool (colleagues laughing) that I developed my own colorscheme,
+    <a rel="stylesheet" href="https://github.com/0xstepit/flow.nvim"
+      >flow.nvim</a
+    >
+  </p>
 
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
+  <br />
 
-  <!-- How to style things 
-	It is possible to add vars to the <style/> thingy
-	-->
-  <style is:global define:vars={{ skillColor, fontWeight, textCase }} }>
-    h1 {
-      color: purple;
-      font-size: 4rem;
-    }
-    .skill {
-      color: var(--skillColor);
-      font-weight: var(--fontWeight);
-      text-transform: var(--textCase);
-    }
-  </style>
+  <p>
+    Before the development of my passion for finance, I did (maybe tried...)
+    research in the interseption between machine learning assisted simulations
+    and aerospace structure analysis. I was fascinated by instability phenomena
+    on cylindric shapes. How people cannot be fascianted by that, right? It was
+    incredible to understand, even though math was pretty clear about it, that
+    an instability phenomena was able to create such articstic shapes. Art in
+    the distruction, or distruction in the art?I spent a bunch of time
+    implementing fast-forward neural nets (I knooow, they're old, but It was a
+    lot of time ago) that were super nice to be hooked into bio-inspired
+    optimization algorithms, like the particle swarm.
+  </p>
+
+  <br />
+
+  <p>
+    Work stuff aside, I love martial arts, and one day I dream to be able to
+    open my own gym. I practiced Judo for aroudn 13 year (every time you asked
+    me this question I reply with a different year numner, I really don't
+    remember the precise number). I placed 3rd at the Italian championship when
+    I was 18, and I own a second-dan black belt. I love my Mitzuno belt,
+    directly from Japan.If you never did it, I strongly recommend it! From Japan
+    to China, I recently start studying Kung-Fu, more precisely the Wing-Chun
+    lineage from Leaung Ting
+  </p>
 </Base>

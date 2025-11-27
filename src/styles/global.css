@@ -6,6 +6,7 @@
   --color-background: #fdfdfd;
 
   --color-primary: hsl(165 100% 0%);
+  --color-accent: hsl(165 75% 50%);
   --color-logo: white;
   --color-main-dark: hsl(205 50% 35%);
   --dark-blue: hsl(230 50% 35%);
@@ -166,6 +167,8 @@ h3 a {
 
 .navigation-spacer {
   text-align: right;
+  font-size: 2rem;
+  font-variation-settings: "wght" 200;
 }
 
 .navigation-links {
@@ -296,10 +299,14 @@ a:visited {
 
 .footer-spacer--right {
   justify-content: right;
+  font-size: 2rem;
+  font-variation-settings: "wght" 200;
 }
 
 .footer-spacer--left {
   justify-content: left;
+  font-size: 2rem;
+  font-variation-settings: "wght" 200;
 }
 
 .footer-links {
@@ -328,7 +335,21 @@ a:visited {
 }
 
 .hero-image {
+  background-color: pink;
   margin-top: calc(10 * var(--spacing-unit));
   width: 600px;
   height: auto;
+  border: 1px solid var(--color-text);
+}
+
+.topolino-caption {
+  color: var(--light-grey);
+  font-variation-settings:
+    "slnt" -15,
+    "MONO" 1;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-logo);
 }
