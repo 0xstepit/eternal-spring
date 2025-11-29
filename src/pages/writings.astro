@@ -8,11 +8,11 @@ import type { CollectionEntry } from "astro:content";
 import { sortByDate } from "../scripts/posts";
 
 import { getCollection, render } from "astro:content";
-const allPosts = await getCollection("blog", ({ data }) => {
+const allPosts = await getCollection("writings", ({ data }) => {
   return data["to-publish"] === false;
 });
 
-type BlogEntry = CollectionEntry<"blog">;
+type BlogEntry = CollectionEntry<"writings">;
 const sortedPosts: BlogEntry[] = sortByDate({
   posts: allPosts,
   order: "newest",
@@ -42,7 +42,7 @@ postsWithMetaData.map(({entry, minutesRead}) => {
         return (
   <h2>Reading time:{minutesRead}</h2>
           <PostCard
-            url={`/posts/${entry.id}/`}
+            url={`/writings/${entry.id}/`}
             title={entry.data.title}
             summary={entry.data.summary}
             date={entry.data.date}

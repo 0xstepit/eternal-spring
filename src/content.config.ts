@@ -1,13 +1,13 @@
 import { glob } from "astro/loaders";
 import { z, defineCollection } from "astro:content";
 
-const blog = defineCollection({
-  loader: glob({ base: "./src/blog", pattern: "**/*.{md,mdx}" }),
+const writings = defineCollection({
+  loader: glob({ base: "./src/writings", pattern: "**/*.{md,mdx}" }),
   schema: z
     .object({
       title: z.string(),
-      summary: z.string().default("Unfortunately no summary to display"),
-      author: z.string().default("Anonymous"),
+      summary: z.string().default(""),
+      author: z.string().default("Anon"),
       modified: z.date(),
       tags: z.array(z.string()),
       "to-publish": z.boolean().default(false),
@@ -18,4 +18,4 @@ const blog = defineCollection({
     })),
 });
 
-export const collections = { blog };
+export const collections = { writings: writings };

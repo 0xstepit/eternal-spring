@@ -7,7 +7,7 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getCollection("blog", ({ data }) => {
+  const posts = await getCollection("writings", ({ data }) => {
     return data["to-publish"] === false;
   });
 
@@ -24,7 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"writings">;
 }
 
 const { post } = Astro.props;
