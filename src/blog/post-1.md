@@ -5,11 +5,13 @@ slug: "noble-local-testing"
 tags: []
 related: []
 created: 2025-08-21
-modified: 2025-11-08
+modified: 2025-11-29
 to-publish: false
 ---
 
 # Noble local testing
+
+<!-- toc -->
 
 This guide walks you through setting up a local Noble blockchain node for
 testing purposes using **state sync** to quickly sync with the existing network.

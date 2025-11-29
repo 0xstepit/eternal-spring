@@ -1,10 +1,17 @@
 ---
+import Base from "../../layouts/Base.astro";
+
+import type { GetStaticPaths } from "astro";
+
+import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
-export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection("blog", ({ data }) => {
+    return data["to-publish"] === false;
+  });
 
-  console.log(`📝 Total blog posts: ${posts.length}`);
+  console.log(`Total blog posts: ${posts.length}`);
 
   return posts.map((post) => {
     console.log(`Post ID: ${post.id}`);
@@ -14,12 +21,21 @@ export async function getStaticPaths() {
       props: { post },
     };
   });
+};
+
+interface Props {
+  post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings, remarkPluginFrontmatter } = await render(post);
 ---
 
-<p>Written by: {post.data.author}</p>
+<Base pageTitle={post.id}>
+  <h1>{post.data.title}</h1>
+  <h2>Reading time:{remarkPluginFrontmatter.minutesRead}</h2>
+  {headings.map((h) => <div>{h.slug}</div>)}
 
-<Content />
+  <p>Written by: {post.data.author}</p>
+  <Content />
+</Base>

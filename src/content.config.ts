@@ -1,30 +1,8 @@
-// This is a special file used by astro for the definition of collections.
-// Import the glob loader
 import { glob } from "astro/loaders";
-// Import utilities from `astro:content`
-import { z, reference, defineCollection } from "astro:content";
-
-// Define a `loader` and `schema` for each collection
-const blog_tutorial = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/blog-tutorial" }),
-  schema: z.object({
-    title: z.string(),
-    author: z.string().default("Anonymous"),
-    pubDate: z.date(),
-    summary: z.string(),
-    image: z
-      .object({
-        url: z.string(),
-        alt: z.string(),
-      })
-      .optional(),
-    tags: z.array(z.string()),
-    relatedPosts: z.array(reference("blog_tutorial")).optional(),
-  }),
-});
+import { z, defineCollection } from "astro:content";
 
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/blog" }),
+  loader: glob({ base: "./src/blog", pattern: "**/*.{md,mdx}" }),
   schema: z
     .object({
       title: z.string(),
@@ -32,6 +10,7 @@ const blog = defineCollection({
       author: z.string().default("Anonymous"),
       modified: z.date(),
       tags: z.array(z.string()),
+      "to-publish": z.boolean().default(false),
     })
     .transform(({ modified, ...rest }) => ({
       ...rest,
@@ -39,5 +18,4 @@ const blog = defineCollection({
     })),
 });
 
-// Export a single `collections` object to register your collection(s)
-export const collections = { blog_tutorial, blog };
+export const collections = { blog };

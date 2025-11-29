@@ -1,11 +1,13 @@
-import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import { remarkReadingTime } from "./remark-reading-time.mjs";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact()],
-
-  vite: {
-    plugins: [tailwindcss()]
-  }
+  markdown: {
+    remarkPlugins: [remarkReadingTime],
+  },
+  vite: {},
+  devToolbar: {
+    enabled: false,
+  },
 });

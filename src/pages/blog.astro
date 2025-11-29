@@ -3,12 +3,33 @@ import "../styles/global.css";
 import Base from "../layouts/Base.astro";
 import PostCard from "../components/PostCard.astro";
 
+import type { CollectionEntry } from "astro:content";
+
 import { sortByDate } from "../scripts/posts";
 
-import { getCollection } from "astro:content";
-const allPosts = await getCollection("blog");
+import { getCollection, render } from "astro:content";
+const allPosts = await getCollection("blog", ({ data }) => {
+  return data["to-publish"] === false;
+});
 
-const sortedPosts = sortByDate({ posts: allPosts, order: "newest" });
+type BlogEntry = CollectionEntry<"blog">;
+const sortedPosts: BlogEntry[] = sortByDate({
+  posts: allPosts,
+  order: "newest",
+});
+
+const postsWithMetaData = await Promise.all(
+  sortedPosts.map(async (entry) => {
+    // Call render() for each entry to get the injected metadata
+    const { remarkPluginFrontmatter } = await render(entry);
+
+    // Return the original entry data AND the extracted metadata
+    return {
+      entry,
+      minutesRead: remarkPluginFrontmatter.minutesRead,
+    };
+  }),
+);
 
 const pageTitle = "Blog";
 ---
@@ -17,15 +38,18 @@ const pageTitle = "Blog";
   <h2>All writings</h2>
   <ul class="post-cards">
     {
-      sortedPosts.map((post: any) => (
-        <PostCard
-          url={`/posts/${post.id}/`}
-          title={post.data.title}
-          summary={post.data.summary}
-          date={post.data.date}
-          tags={post.data.tags}
-        />
-      ))
+postsWithMetaData.map(({entry, minutesRead}) => {
+        return (
+  <h2>Reading time:{minutesRead}</h2>
+          <PostCard
+            url={`/posts/${entry.id}/`}
+            title={entry.data.title}
+            summary={entry.data.summary}
+            date={entry.data.date}
+            tags={entry.data.tags}
+          />
+        );
+      })
     }
   </ul>
 </Base>
