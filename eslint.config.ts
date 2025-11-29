@@ -17,4 +17,17 @@ export default defineConfig([
     files: ["**/*.vue"],
     languageOptions: { parserOptions: { parser: tseslint.parser } },
   },
+  {
+    ignores: [
+      "dist/**",
+      ".output/**",
+      "node_modules/**",
+      "*.log",
+      ".env*",
+      ".cache/**",
+      ".astro/**",
+      ".DS_Store",
+      "coverage/**",
+    ],
+  },
 ]);
