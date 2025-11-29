@@ -19,7 +19,7 @@ const pageTitle = "Blog";
     {
       sortedPosts.map((post: any) => (
         <PostCard
-          url={`/blog/${post.id}/`}
+          url={`/posts/${post.id}/`}
           title={post.data.title}
           summary={post.data.summary}
           date={post.data.date}

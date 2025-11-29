@@ -29,8 +29,10 @@ const formatterDate = toPostDate(date);
       <ul class="post-tags">
         {tags.map((tag: string) => (
           <li class="post-tag">
-            <span class="tag-hash">#</span>
-            <span class="tag-text">{tag}</span>
+            <div class="tag-container">
+              <span class="tag-hash">#</span>
+              <span class="tag-text">{tag}</span>
+            </div>
           </li>
         ))}
       </ul>
