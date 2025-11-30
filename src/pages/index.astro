@@ -1,22 +1,24 @@
 ---
+import { SITE_CONFIG } from "@/config";
 import Base from "../layouts/Base.astro";
 
-const pageTitle = "Eternal Spring";
+const pageTitle = SITE_CONFIG.title;
 ---
 
 <Base pageTitle={pageTitle}>
-  <h1>Welcome to Eternal Spring!</h1>
-  <div class="hero">
-    <span> I'm Stefano, a software enginer based in Berlin. </span>
-    <div class="hero-image-container">
+  <div class="index-container">
+    <div class="hero">
+      <h1>Welcome to Eternal Spring.</h1>
+    </div>
+    <div class="index-image-container">
       <figure>
         <img
-          class="hero-image"
-          src="/me-and-topolino.JPG"
+          class="index-image"
+          src="/images/lisbon.jpg"
           alt="A shot of me and Topolino."
         />
-        <figcaption class="topolino-caption">
-          Fig 0: A shot of me and Topolino
+        <figcaption class="caption">
+          <p>Fig 0: Lisbon - Santa Maria Maior</p>
         </figcaption>
       </figure>
     </div>

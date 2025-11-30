@@ -5,20 +5,20 @@ import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-import "@fontsource-variable/space-grotesk";
+import { SITE_CONFIG } from "@/config";
+const language = SITE_CONFIG.language || "en-US";
 
-const { pageTitle } = Astro.props;
+const { pageTitle, pageStyle } = Astro.props;
+const bodyContainer = pageStyle || "container-body";
 ---
 
-<html lang="en">
+<html lang={language}>
   <Head pageTitle={pageTitle} />
   <body class="body">
-    <div class="body-content">
+    <div class={bodyContainer}>
       <Header />
       <main class="main">
-        <div class="container">
-          <slot />
-        </div>
+        <slot />
       </main>
       <Footer />
     </div>

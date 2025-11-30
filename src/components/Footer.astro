@@ -1,24 +1,27 @@
 ---
 import Social from "./Social.astro";
-import { SOCIAL_LINKS } from "@/blogConfig";
+import { SOCIAL_LINKS } from "@/config";
 ---
 
 <footer class="footer">
-  <div class="footer-wrapper">
-    <div class="footer-spacer footer-spacer--left">+</div>
-    <div class="footer-links">
-      {
-        SOCIAL_LINKS.map((social) => {
-          return (
-            <Social
-              platform={social.platform}
-              url={social.url}
-              svg={social.svg}
-            />
-          );
-        })
-      }
+  <div class="footer-container">
+    <div class="footer-contacts">
+      <div class="footer-spacer footer-spacer--left">+</div>
+      <div class="footer-links">
+        {
+          SOCIAL_LINKS.map((social) => {
+            return (
+              <Social
+                platform={social.platform}
+                url={social.url}
+                svg={social.svg}
+              />
+            );
+          })
+        }
+      </div>
+      <div class="footer-spacer footer-spacer--right">+</div>
     </div>
-    <div class="footer-spacer footer-spacer--right">+</div>
+    <div class="footer-rights">Copyright © 2025 Stefano Pitton</div>
   </div>
 </footer>

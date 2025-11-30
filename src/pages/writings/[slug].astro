@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 
 import type { GetStaticPaths } from "astro";
 
+import { toPostDate } from "../../scripts/dates";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
@@ -28,14 +29,43 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content, headings, remarkPluginFrontmatter } = await render(post);
+// const { Content, headings, remarkPluginFrontmatter } = await render(post);
+const { Content } = await render(post);
+
+const formattedDate = toPostDate(post.data.date);
 ---
 
-<Base pageTitle={post.id}>
-  <h1>{post.data.title}</h1>
-  <h2>Reading time:{remarkPluginFrontmatter.minutesRead}</h2>
-  {headings.map((h) => <div>{h.slug}</div>)}
+<Base pageTitle={post.id} pageStyle={"container-body-dotted"}>
+  <article class="article">
+    <header class="article-header">
+      <h1>{post.data.title}</h1>
 
-  <p>Written by: {post.data.author}</p>
-  <Content />
+      <p class="article-meta">
+        <!-- <h2>Reading time:{remarkPluginFrontmatter.minutesRead}</h2> -->
+        <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
+
+        Published on
+        <time>{formattedDate}</time>
+        by
+        <span class="author">{post.data.author}</span>
+      </p>
+
+      <p class="summary">{post.data.summary}</p>
+    </header>
+
+    <div class="article-content">
+      <Content />
+    </div>
+
+    <!-- <footer class="article-footer"> -->
+    <!--   <div class="tags"> -->
+    <!--     <a href="/tags/html">HTML</a> -->
+    <!--     <a href="/tags/css">CSS</a> -->
+    <!--   </div> -->
+    <!--   <nav class="post-navigation"> -->
+    <!--     <a href="/previous-post">&laquo; Previous Post</a> -->
+    <!--     <a href="/next-post">Next Post &raquo;</a> -->
+    <!--   </nav> -->
+    <!-- </footer> -->
+  </article>
 </Base>

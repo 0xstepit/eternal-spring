@@ -35,12 +35,12 @@ const pageTitle = "Blog";
 ---
 
 <Base pageTitle={pageTitle}>
-  <h2>All writings</h2>
+  <h1>All writings</h1>
   <ul class="post-cards">
     {
-postsWithMetaData.map(({entry, minutesRead}) => {
+      postsWithMetaData.map(({ entry, minutesRead }) => {
         return (
-  <h2>Reading time:{minutesRead}</h2>
+          // <h2>Reading time:{minutesRead}</h2>
           <PostCard
             url={`/writings/${entry.id}/`}
             title={entry.data.title}

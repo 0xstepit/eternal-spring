@@ -5,6 +5,9 @@ import { remarkReadingTime } from "./remark-reading-time.mjs";
 export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
+    shikiConfig: {
+      theme: "github-light",
+    },
   },
   vite: {},
   devToolbar: {

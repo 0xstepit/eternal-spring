@@ -12,3 +12,11 @@ export type SocialLink = {
 };
 
 export type SocialLinks = Array<SocialLink>;
+
+export type SiteConfig = {
+  website: string;
+  title: string;
+  author: string;
+  description: string;
+  language: string;
+};
