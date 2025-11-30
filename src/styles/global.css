@@ -31,9 +31,10 @@
   --header-height: 100px;
 }
 
-*,
-*::before,
-*::after {
+/* *, */
+/* *::before, */
+/* *::after { */
+* {
   box-sizing: border-box;
 }
 
@@ -93,6 +94,11 @@ h1 {
   font-size: 2.5rem;
   font-variation-settings: "wght" 700;
 }
+
+article h1 {
+  margin-bottom: calc(0 * var(--spacing-unit));
+}
+
 h2 {
   font-size: 2rem;
 }
@@ -125,17 +131,18 @@ h3 a {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .container-body-dotted {
+  min-height: 100vh;
   width: 100%;
   height: 100%;
   background-color: white;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   --dot-bg: white;
   --dot-color: var(--color-dark-grey);
@@ -164,7 +171,7 @@ h3 a {
   width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  flex-grow: 1;
 }
 
 /* Header*/
@@ -245,11 +252,18 @@ h3 a {
   font-variation-settings: "wght" 200;
 }
 
-.post-header {
+.article-header {
   display: flex;
   flex-direction: column;
   gap: 0;
   padding: 0;
+  margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+.article-meta {
+  font-variation-settings:
+    "slnt" -15,
+    "wght" 400;
 }
 
 .post-date {
@@ -260,6 +274,12 @@ h3 a {
   font-variation-settings:
     "slnt" -15,
     "MONO" 1;
+}
+
+.writings-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }
 
 .post-tags {
@@ -419,31 +439,42 @@ a:visited {
   flex-direction: column;
 }
 
-.hero-image-container {
+.figure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.figure-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.hero-image {
-  margin-top: calc(10 * var(--spacing-unit));
-  width: 600px;
-  height: 500px;
+.about-image {
+  margin-top: calc(3 * var(--spacing-unit));
+  margin-top: calc(3 * var(--spacing-unit));
+  width: 100%;
+  height: auto;
   border: 1px solid var(--color-text);
 }
 
 .index-image {
-  width: 650px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   border: 1px solid var(--color-text);
 }
 
-.caption {
-  color: var(--light-grey);
+.figure-caption {
+  margin-top: calc(1 * var(--spacing-unit));
+  color: var(--color-dark-grey);
   font-variation-settings:
     "slnt" -15,
     "MONO" 1;
+  text-align: left;
+  width: 100%;
 }
 
 .caption p {
@@ -457,7 +488,6 @@ a:visited {
 
 /* Code */
 .astro-code {
-  background-color: var(--color-light-grey);
   padding: calc(1 * var(--spacing-unit));
   border: 1px solid var(--color-grey);
   line-height: 1.3;
@@ -466,4 +496,72 @@ a:visited {
 code span {
   font-size: 0.7rem;
   line-height: 1;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1rem 0;
+  background-color: var(--color-light-grey);
+  border: 1px solid var(--color-grey);
+}
+
+pre [data-line] {
+  padding: 0 1rem;
+}
+pre > code {
+  counter-reset: line;
+}
+
+[data-highlighted-line] {
+  display: inline-block;
+  background-color: var(--color-grey);
+  padding: 10rem 10rem;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 1.25rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 1.75rem;
+}
+
+code[data-line-numbers-max-digits="4"] > [data-line]::before {
+  width: 2.25rem;
+}
+
+.rehype-pretty-copy {
+  background-color: transparent;
+  border: 0px solid var(--color-text);
+}
+
+.rehype-pretty-copy.rehype-pretty-copied {
+  background-color: transparent;
+  color: red;
+  border: 0px solid var(--color-text);
+}
+
+.decorator {
+  display: flex;
+  text-align: center;
+  color: var(--color-dark-grey);
+  justify-content: center;
+  gap: calc(1 * var(--spacing-unit));
+  margin-bottom: calc(2 * var(--spacing-unit));
 }

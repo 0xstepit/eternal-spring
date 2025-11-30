@@ -3,7 +3,7 @@ import type { NavigationLinks, SocialLinks, SiteConfig } from "@/types.ts";
 export const NAV_LINKS: NavigationLinks = [
   { name: "Eternal Spring", path: "/" },
   { name: "Writings", path: "/writings" },
-  { name: "Tags", path: "/tags" },
+  // { name: "Tags", path: "/tags" },
   { name: "About", path: "/about" },
 ];
 

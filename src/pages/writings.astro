@@ -9,7 +9,7 @@ import { sortByDate } from "../scripts/posts";
 
 import { getCollection, render } from "astro:content";
 const allPosts = await getCollection("writings", ({ data }) => {
-  return data["to-publish"] === false;
+  return data["to-publish"] === true;
 });
 
 type BlogEntry = CollectionEntry<"writings">;
@@ -35,21 +35,30 @@ const pageTitle = "Blog";
 ---
 
 <Base pageTitle={pageTitle}>
-  <h1>All writings</h1>
-  <ul class="post-cards">
-    {
-      postsWithMetaData.map(({ entry, minutesRead }) => {
-        return (
-          // <h2>Reading time:{minutesRead}</h2>
-          <PostCard
-            url={`/writings/${entry.id}/`}
-            title={entry.data.title}
-            summary={entry.data.summary}
-            date={entry.data.date}
-            tags={entry.data.tags}
-          />
-        );
-      })
-    }
-  </ul>
+  <div class="writings-container">
+    <h1>All writings</h1>
+
+    <div class="decorator">
+      <span>+</span>
+      <span>+</span>
+      <span>+</span>
+    </div>
+
+    <ul class="post-cards">
+      {
+        postsWithMetaData.map(({ entry, minutesRead }) => {
+          return (
+            // <h2>Reading time:{minutesRead}</h2>
+            <PostCard
+              url={`/writings/${entry.id}/`}
+              title={entry.data.title}
+              summary={entry.data.summary}
+              date={entry.data.date}
+              tags={entry.data.tags}
+            />
+          );
+        })
+      }
+    </ul>
+  </div>
 </Base>

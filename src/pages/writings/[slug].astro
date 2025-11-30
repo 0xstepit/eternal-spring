@@ -3,13 +3,13 @@ import Base from "../../layouts/Base.astro";
 
 import type { GetStaticPaths } from "astro";
 
-import { toPostDate } from "../../scripts/dates";
+import { toPostDate, getDay, getMonth, getYear } from "../../scripts/dates";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection("writings", ({ data }) => {
-    return data["to-publish"] === false;
+    return data["to-publish"] === true;
   });
 
   console.log(`Total blog posts: ${posts.length}`);
@@ -32,7 +32,11 @@ const { post } = Astro.props;
 // const { Content, headings, remarkPluginFrontmatter } = await render(post);
 const { Content } = await render(post);
 
-const formattedDate = toPostDate(post.data.date);
+const postDate = post.data.date;
+const day = getDay(postDate);
+const month = getMonth(postDate).toLocaleLowerCase();
+const year = getYear(postDate);
+const formattedDate = toPostDate(postDate);
 ---
 
 <Base pageTitle={post.id} pageStyle={"container-body-dotted"}>
@@ -45,13 +49,21 @@ const formattedDate = toPostDate(post.data.date);
         <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
 
         Published on
-        <time>{formattedDate}</time>
-        by
-        <span class="author">{post.data.author}</span>
+
+        <a href={`https://www.onthisday.com/date/${year}/${month}/${day}`}
+          ><time>{formattedDate}</time></a
+        > by
+        <span class="article-author">{post.data.author}</span>
       </p>
 
-      <p class="summary">{post.data.summary}</p>
+      <p class="article-summary">{post.data.summary}</p>
     </header>
+
+    <div class="decorator">
+      <span>~</span>
+      <span>~</span>
+      <span>~</span>
+    </div>
 
     <div class="article-content">
       <Content />

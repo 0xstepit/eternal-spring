@@ -7,87 +7,103 @@ const pageTitle = "About";
 ---
 
 <Base pageTitle={pageTitle}>
-  <h2>...Hey!</h2>
+  <h1>About</h1>
+
+  <div class="decorator">
+    <span>*</span>
+    <span>*</span>
+    <span>*</span>
+  </div>
 
   <p>
-    Eternal Spring is a blog about random stuff I learn and experiment during my
-    working and free time. Expect to find writings about software design,
-    decentralized finance applciations, math, and martial arts.
+    Eternal Spring is a blog about the <em>random things</em> I learn and experiment
+    with during my work and free time. Expect to find writing, notes, and fragments
+    on software design, decentralized finance applications, math, and martial arts.
   </p>
 
   <br />
 
   <p>
-    I'm Stefano, a software engineer based in Belrin working in the blockchain
-    industry. I contributed to <a
+    I'm Stefano, a software engineer based in Belrin working in the
+    decentralized systems industry.<br />I'm interested cross-chain data
+    exchange, decentralized finance, and system architecture.<br /> I've contributed
+    to a stablecoin app-specific chain (<a
       rel="stylesheet"
       href="https://github.com/noble-assets/noble"
     >
       Noble Core</a
-    > a stablecoin app-specific chain, <a
+    >), a chain module that integrates go-ethereum in a Cosmos SDK-based chain (<a
       rel="stylesheet"
       href="https://github.com/evmos/evmos">evmos</a
-    > which is a chain module to integrate go-ethereum in a cosmos chain, the <a
-      rel="stylesheet"
-      href="https://github.com/cosmos/cosmos-sdk">Cosmos SDK</a
-    >, and build a bunch of nice things, amongst which, an abstraction layer on
-    top of IBC, CCTP, and Hyperlane called <a
+    >, <a rel="stylesheet" href="https://github.com/cosmos/cosmos-sdk"
+      >Cosmos SDK</a
+    >), and a bunch of other <em>nice</em> things, including an abstraction layer
+    on top of industry cross-chain bridges like IBC, CCTP, and Hyperlane called <a
       rel="stylesheet"
       href="https://github.com/noble-assets/orbiter">Orbiter</a
-    >. I'm interested in the cross-chain exchange of data, DeFi, and system
-    architecture.
+    >.
   </p>
-
-  <div class="hero-image-container">
-    <figure>
-      <img
-        class="hero-image"
-        src="/images/me-and-topolino.jpg"
-        alt="A shot of me and Topolino."
-      />
-      <figcaption class="caption">
-        <p>Fig 0: A shot of me and Topolino</p>
-      </figcaption>
-    </figure>
-  </div>
 
   <br />
 
   <p>
-    I like spending time creating my own things, and I like them to be simple
-    and minimal. This interest brought me to develop a keyboard and
-    terminal-centric worklow, mainly base on Neovim and Tmux. I'm so obsessed by
-    personal tool (colleagues laughing) that I developed my own colorscheme,
-    <a rel="stylesheet" href="https://github.com/0xstepit/flow.nvim"
-      >flow.nvim</a
+    I enjoy spending time creating my own tools, and I like them to be simple
+    and minimal. This interest led me to develop a <em>terminal-centric</em> workflow,
+    mainly based on Neovim and Tmux. This interest brought me to develop a keyboard
+    and terminal-centric worklow, mainly base on Neovim and Tmux.
+  </p>
+
+  <figure class="figure">
+    <div class="figure-container">
+      <img
+        class="about-image"
+        src="/images/me-and-topolino.jpg"
+        alt="A shot of me and Topolino."
+      />
+      <figcaption class="figure-caption">
+        <p>Figure 1: A shot of me and Topolino.</p>
+      </figcaption>
+    </div>
+  </figure>
+
+  <br />
+
+  <p>
+    Before developing my passion for computers and finance, I did (or maybe
+    tried to do…) research at the intersection of machine-learning-assisted
+    simulations and aerospace structural analysis. I was fascinated by
+    instability phenomena in cylindrical shapes. <em
+      >How can people not be fascinated by that, right?</em
+    > It was incredible to realize, despite the math being quite clear,that an instability
+    phenomenon could create such artistic shapes. Art in destruction, or destruction
+    in the art? I spent a good amount of time implementing
+    <a
+      rel="stylesheet"
+      href="https://www.sciencedirect.com/science/article/abs/pii/S0263822319320549"
+      >feedforward neural networks</a
+    >
+    (I knooow, they're old, but it was a long time ago)
+    <a
+      rel="stylesheet"
+      href="https://www.sciencedirect.com/science/article/abs/pii/S0263822319320549"
+      >that worked beautifully when combined with bio-inspired optimization
+      algorithms like particle swarm optimization</a
     >
   </p>
 
   <br />
 
   <p>
-    Before the development of my passion for finance, I did (maybe tried...)
-    research in the interseption between machine learning assisted simulations
-    and aerospace structure analysis. I was fascinated by instability phenomena
-    on cylindric shapes. How people cannot be fascianted by that, right? It was
-    incredible to understand, even though math was pretty clear about it, that
-    an instability phenomena was able to create such articstic shapes. Art in
-    the distruction, or distruction in the art?I spent a bunch of time
-    implementing fast-forward neural nets (I knooow, they're old, but It was a
-    lot of time ago) that were super nice to be hooked into bio-inspired
-    optimization algorithms, like the particle swarm.
-  </p>
+    Work stuff aside, I love martial arts, and one day I dream of opening my own
+    gym. I practiced Judo for around 13 years . I placed
 
-  <br />
-
-  <p>
-    Work stuff aside, I love martial arts, and one day I dream to be able to
-    open my own gym. I practiced Judo for aroudn 13 year (every time you asked
-    me this question I reply with a different year numner, I really don't
-    remember the precise number). I placed 3rd at the Italian championship when
-    I was 18, and I own a second-dan black belt. I love my Mitzuno belt,
-    directly from Japan.If you never did it, I strongly recommend it! From Japan
-    to China, I recently start studying Kung-Fu, more precisely the Wing-Chun
-    lineage from Leaung Ting
+    <a
+      rel="stylesheet"
+      href="https://judoinside.com/judoka/96874/Stefano_Pitton/judo-career"
+      >3rd at the Italian championships</a
+    > when I was 18, and I hold a second-dan black belt. I love my Mizuno belt, directly
+    from Japan. If you’ve never tried judo, I strongly recommend it! From Japan to
+    China: I recently started studying Kung Fu, specifically the Wing Chun lineage
+    from Leung Ting, and I love it!
   </p>
 </Base>
