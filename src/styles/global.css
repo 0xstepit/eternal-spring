@@ -51,6 +51,10 @@ blockquote {
   padding: 0;
 }
 
+em {
+  font-variation-settings: "slnt" -15;
+}
+
 ul,
 ol {
   list-style: none;
@@ -263,7 +267,7 @@ h3 a {
 .article-meta {
   font-variation-settings:
     "slnt" -15,
-    "wght" 400;
+    "wght" 200;
 }
 
 .post-date {

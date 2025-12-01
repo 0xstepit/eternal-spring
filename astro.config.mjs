@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import { remarkReadingTime } from "./remark-reading-time.mjs";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 
@@ -22,7 +21,7 @@ export default defineConfig({
     syntaxHighlight: false,
     extendDefaultPlugins: true,
     rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
-    remarkPlugins: [remarkReadingTime],
+    remarkPlugins: [],
     shikiConfig: {},
   },
   vite: {},

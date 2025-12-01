@@ -1,5 +1,6 @@
 {
   "name": "eternalspring",
+  "license": "MIT",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,15 +12,11 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.13",
     "@astrojs/upgrade": "^0.6.2",
-    "@fontsource-variable/space-grotesk": "^5.2.10",
-    "@fontsource/twinkle-star": "^5.2.8",
     "@rehype-pretty/transformers": "^0.13.2",
     "astro": "^5.15.3",
     "jiti": "^2.6.1",
     "mdast-util-to-string": "^4.0.0",
-    "reading-time": "^1.5.0",
     "rehype-pretty-code": "^0.14.1",
-    "remark-toc": "^9.0.0",
     "shiki": "^3.17.0",
     "vue-eslint-parser": "^10.2.0"
   },
