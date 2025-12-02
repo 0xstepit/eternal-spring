@@ -48,7 +48,6 @@ const pageTitle = "Blog";
       {
         postsWithMetaData.map(({ entry, minutesRead }) => {
           return (
-            // <h2>Reading time:{minutesRead}</h2>
             <PostCard
               url={`/writings/${entry.id}/`}
               title={entry.data.title}

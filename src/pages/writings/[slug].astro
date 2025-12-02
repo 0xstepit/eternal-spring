@@ -39,13 +39,12 @@ const year = getYear(postDate);
 const formattedDate = toPostDate(postDate);
 ---
 
-<Base pageTitle={post.id} pageStyle={"container-body-dotted"}>
+<Base pageTitle={post.id} pageStyle={"dotted"}>
   <article class="article">
     <header class="article-header">
       <h1>{post.data.title}</h1>
 
       <p class="article-meta">
-        <!-- <h2>Reading time:{remarkPluginFrontmatter.minutesRead}</h2> -->
         <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
 
         Published on

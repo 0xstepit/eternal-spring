@@ -9,7 +9,7 @@ import { SITE_CONFIG } from "@/config";
 const language = SITE_CONFIG.language || "en-US";
 
 const { pageTitle, pageStyle } = Astro.props;
-const bodyContainer = pageStyle || "container-body";
+const bodyContainer = "body-container" + " " + pageStyle;
 ---
 
 <html lang={language}>

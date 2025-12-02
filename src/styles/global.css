@@ -2,39 +2,42 @@
 
 :root {
   /* Colors */
-  --color-text: hsl(0 0% 10%);
-  --color-background: #fdfdfd;
-
-  --color-primary: hsl(165 100% 0%);
-  --color-accent: hsl(165 75% 50%);
+  --color-white: hsl(0, 0%, 99%);
+  --color-black: hsl(0, 0%, 10%);
+  --color-cyan: hsl(165 75% 50%);
   --color-light-grey: hsl(0 0% 96%);
   --color-grey: hsl(0 0% 85%);
   --color-dark-grey: hsl(0 0% 58%);
-  --color-logo: white;
-  --color-main-dark: hsl(205 50% 35%);
-  --dark-blue: hsl(230 50% 35%);
+
+  /* Abstraction */
+  --color-text: var(--color-black);
+  --color-background: var(--color-white);
+  --color-accent: var(--color-cyan);
+  --color-text-logo: var(--color-background);
+  --color-background-logo: var(--color-text);
+  --color-link: var(--color-text);
   --color-link-visited: var(--color-accent);
 
   /* Typography */
   --font-sans: "Recursive", monospace;
-  --font-size: 1.125rem;
-
+  --font-size: 1.125rem; /* used by the rem*/
   --casl: "casl" 0;
   --wght: "wght" 400;
   --slnt: "slnt" 0;
-  --mono: "mono" 1;
+  --mono: "MONO" 1;
   --CRSV: "CRSV" 0;
 
   /* Layout */
-  --content-max-width: 800px;
+  --content-max-width: 720px;
   --spacing-unit: 1rem;
+  --border-size: calc(0.1 * var(--spacing-unit));
   --header-height: 100px;
 }
 
-/* *, */
-/* *::before, */
-/* *::after { */
-* {
+*,
+*::before,
+*::after {
+  /* To have max width to take into account border, margin, and padding. */
   box-sizing: border-box;
 }
 
@@ -46,6 +49,7 @@ p,
 ul,
 ol,
 figure,
+figcaption,
 blockquote {
   margin: 0;
   padding: 0;
@@ -60,16 +64,8 @@ ol {
   list-style: none;
 }
 
-* {
-  font-size: 1rem;
-}
-
 html {
-  font-size: 100%; /* 100% of the browser's default (usually 16px) */
-
-  font-family: var(--font-sans);
-  font-variation-settings:
-    var(--mono), var(--casl), var(--wght), var(--slnt), var(--CRSV);
+  font-size: 100%;
   line-height: 1.6;
 
   color: var(--color-text);
@@ -80,7 +76,11 @@ html {
 
 html,
 body {
+  width: 100%;
   min-height: 100vh;
+  font-family: var(--font-sans);
+  font-variation-settings:
+    var(--mono), var(--casl), var(--wght), var(--slnt), var(--CRSV);
 }
 
 /* Headings */
@@ -89,7 +89,6 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--font-sans);
   margin-top: calc(3 * var(--spacing-unit));
   margin-bottom: calc(2 * var(--spacing-unit));
 }
@@ -99,46 +98,32 @@ h1 {
   font-variation-settings: "wght" 700;
 }
 
-article h1 {
-  margin-bottom: calc(0 * var(--spacing-unit));
-}
-
+/* h2 is not used, but let free for futureproof */
 h2 {
   font-size: 2rem;
 }
+
 h3 {
   font-size: 1.5rem;
+  font-variation-settings: "wght" 600;
   margin-top: calc(-0.5 * var(--spacing-unit));
   margin-bottom: calc(0 * var(--spacing-unit));
-  font-variation-settings: "wght" 100;
 }
 
-h3 a {
-  font-size: 1.5rem;
-  font-variation-settings:
-    "wght" 600,
-    "mono" 1;
-}
+/* ****************************** */
+/* *** Main                       */
+/* ****************************** */
 
 .body {
   background-color: var(--color-accent);
-  flex: 1;
+  flex-direction: column;
+  display: flex;
 }
 
-/* container-body is used to set the white page on top of
+/* Used to set the white page on top of
  * the accented body color. This way, we will see the accented
  * color only when scrolling at the edges. */
-.container-body {
-  min-height: 100vh;
-  width: 100%;
-  background-color: white;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.container-body-dotted {
+.body-container {
   min-height: 100vh;
   width: 100%;
   height: 100%;
@@ -147,11 +132,13 @@ h3 a {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
 
-  --dot-bg: white;
-  --dot-color: var(--color-dark-grey);
-  --dot-size: 1px;
-  --dot-space: 22px;
+.dotted {
+  --dot-bg: var(--color-background);
+  --dot-color: var(--color-grey);
+  --dot-size: calc(0.015 * var(--header-height));
+  --dot-space: calc(0.2 * var(--header-height));
   background:
     linear-gradient(
         90deg,
@@ -168,43 +155,28 @@ h3 a {
 }
 
 /* ****************************** */
-/* *** Main                       */
-/* ****************************** */
-
-.main {
-  width: var(--content-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  flex-grow: 1;
-}
-
-/* Header*/
-
-/* ****************************** */
 /* *** Header                     */
 /* ****************************** */
 
-.page-header {
+.body-header {
   position: sticky;
   top: 0;
 
   height: var(--header-height);
+
   width: 100%; /* Use 100% instead of left/right 0 for simplicity */
 
-  z-index: 1000;
-
   background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-text);
-  margin-left: auto;
-  margin-right: auto;
+  border-bottom: var(--border-size) solid var(--color-text);
+  margin-bottom: 2px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .navigation {
   width: var(--content-max-width);
-  background-color: var(--color-background);
   height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -220,12 +192,32 @@ h3 a {
   flex-grow: 1;
 }
 
+.navigation-links {
+  flex-grow: 2;
+}
+
 .navigation-logo {
-  text-decoration: none;
+  background: var(--color-background-logo);
   font-variation-settings:
-    "wght" 600,
-    var(--mono);
-  text-align: left;
+    "wght" 700,
+    "MONO" 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.1em;
+}
+
+.logo-link {
+  color: var(--color-text-logo);
+  text-decoration: none;
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: center;
+  gap: calc(3 * var(--spacing-unit));
+  font-variation-settings:
+    "wght" 500,
+    "MONO" 1;
 }
 
 .navigation-spacer {
@@ -234,17 +226,18 @@ h3 a {
   font-variation-settings: "wght" 200;
 }
 
-.navigation-links {
-  flex-grow: 2;
-  background-color: var(--color-background);
+/* ****************************** */
+/* *** Main                       */
+/* ****************************** */
+
+.main {
+  width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
 }
 
-.navigation-list {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-
+/* Header*/
 .post-cards {
   display: flex;
   flex-direction: column;
@@ -327,36 +320,15 @@ h3 a {
   align-items: center;
   text-align: center;
 }
+
 /* Links */
 a {
-  color: var(--color-primary);
+  font-size: inherit;
+  color: var(--color-text);
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-decoration-style: solid;
+  text-decoration-thickness: var(--border-size);
   text-decoration-color: var(--color-accent);
   transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--color-primary);
-}
-
-a:visited {
-  color: var(--color-primary);
-  text-decoration-color: var(--color-link-visited);
-}
-
-.navigation a {
-  font-variation-settings:
-    "wght" 600,
-    "MONO" 1;
-}
-
-.navigation-logo a {
-  padding: 0.3em;
-  color: var(--color-logo);
-  background: var(--color-primary);
-  text-decoration: none;
 }
 
 /* ****************************** */

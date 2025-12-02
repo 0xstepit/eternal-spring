@@ -9,6 +9,8 @@ var { name, path } = Astro.props;
 name = name.toLocaleLowerCase().split(" ").join("-");
 ---
 
-<a href={path} class="logo-link" }>
-  ~/.{name}
-</a>
+<div class="navigation-logo">
+  <a href={path} class="logo-link" }>
+    ~/.{name}
+  </a>
+</div>

@@ -1,31 +1,13 @@
 ---
 import { NAV_LINKS } from "@/config";
-import SecondaryNavigation from "./SecondaryNavigation.astro";
-import PrimaryNavigation from "./PrimaryNavigation.astro";
+import NavigationLinks from "./NavigationLinks.astro";
+import Logo from "./Logo.astro";
 
 const [logo, ...links] = NAV_LINKS;
 ---
 
 <nav class="navigation">
-  <div class="navigation-logo">
-    <PrimaryNavigation name={logo.name} path={logo.path} />
-  </div>
-  <div class="navigation-links">
-    <ul class="navigation-list">
-      {
-        links.map((link) => {
-          return <SecondaryNavigation name={link.name} path={link.path} />;
-        })
-      }
-    </ul>
-  </div>
+  <Logo name={logo.name} path={logo.path} />
+  <NavigationLinks links={links} />
   <div class="navigation-spacer">+</div>
 </nav>
-
-<!-- <div id="main-menu" class="nav-links"> -->
-<!--   <a href="/">Home</a> -->
-<!--   <a href="/about/">About</a> -->
-<!--   <a href="/blog/">Blog</a> -->
-<!--   <a href="/tags/">Tags</a> -->
-<!--   <a href="https://github.com/0xstepit/eternal-spring">Github</a> -->
-<!-- </div> -->

@@ -1,0 +1,34 @@
+---
+import type { NavigationLink } from "@/types.ts";
+
+const currentPath = Astro.url.pathname;
+
+interface Props {
+  links: NavigationLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="navigation-links">
+  <ul class="navigation-list">
+    {
+      links.map((link) => {
+        return (
+          <li>
+            <a
+              href={link.path}
+              class={
+                currentPath === link.path
+                  ? "navbar-secondary active"
+                  : "navabar-secondary"
+              }
+            >
+              {link.name}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
