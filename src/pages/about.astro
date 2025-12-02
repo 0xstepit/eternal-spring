@@ -3,6 +3,9 @@ import "../styles/global.css";
 
 import Base from "../layouts/Base.astro";
 
+import { Image } from "astro:assets";
+import AboutImage from "../images/me-and-topolino.jpg";
+
 const pageTitle = "About";
 ---
 
@@ -57,9 +60,9 @@ const pageTitle = "About";
 
   <figure class="figure">
     <div class="figure-container">
-      <img
+      <Image
         class="about-image"
-        src="/images/me-and-topolino.jpg"
+        src={AboutImage}
         alt="A shot of me and Topolino."
       />
       <figcaption class="figure-caption">

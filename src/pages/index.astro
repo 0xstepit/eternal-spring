@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import IndexImage from "../images/lisbon.jpg";
+
 import { SITE_CONFIG } from "@/config";
 import Base from "../layouts/Base.astro";
 
@@ -12,10 +15,10 @@ const pageTitle = SITE_CONFIG.title;
     </div>
     <figure class="figure">
       <div class="figure-container">
-        <img
+        <Image
           class="index-image"
-          src="/images/lisbon.jpg"
-          alt="A shot of me and Topolino."
+          src={IndexImage}
+          alt="Santa Maria Maior in Lisbon"
         />
         <figcaption class="figure-caption">
           <p>Figure 0: Santa Maria Maior (Lisbon, Portugal).</p>
