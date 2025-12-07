@@ -7,7 +7,9 @@ const [logo, ...links] = NAV_LINKS;
 ---
 
 <nav class="navigation">
-  <Logo name={logo.name} path={logo.path} />
+  <div class="logo-container">
+    <Logo name={logo.name} path={logo.path} />
+  </div>
   <NavigationLinks links={links} />
   <div class="navigation-spacer">+</div>
 </nav>
