@@ -9,21 +9,26 @@ const pageTitle = SITE_CONFIG.title;
 ---
 
 <Base pageTitle={pageTitle}>
-  <div class="index-container">
-    <div class="hero">
-      <h1>Welcome to Eternal Spring.</h1>
-    </div>
-    <figure class="figure">
-      <div class="figure-container">
-        <Image
-          class="index-image"
-          src={IndexImage}
-          alt="Santa Maria Maior in Lisbon"
-        />
-        <figcaption class="figure-caption">
-          <p>Figure 0: Santa Maria Maior (Lisbon, Portugal).</p>
-        </figcaption>
-      </div>
-    </figure>
+  <h1>Welcome to Eternal Spring.</h1>
+
+  <div class="decorator">
+    <span>×</span>
+    <span>×</span>
+    <span>×</span>
   </div>
+
+  <figure class="figure">
+    <div class="figure-container">
+      <Image
+        class="index-image"
+        src={IndexImage}
+        alt="Santa Maria Maior in Lisbon"
+        format="webp"
+        quality={80}
+      />
+      <figcaption class="figure-caption">
+        <p>Figure 0: Santa Maria Maior (Lisbon, Portugal).</p>
+      </figcaption>
+    </div>
+  </figure>
 </Base>

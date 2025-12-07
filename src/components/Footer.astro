@@ -1,27 +1,15 @@
 ---
-import Social from "./Social.astro";
+import SocialLinks from "./SocialLinks.astro";
 import { SOCIAL_LINKS } from "@/config";
 ---
 
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-contacts">
+    <SocialLinks links={SOCIAL_LINKS} />
+    <div class="footer-copyright">
       <div class="footer-spacer footer-spacer--left">+</div>
-      <div class="footer-links">
-        {
-          SOCIAL_LINKS.map((social) => {
-            return (
-              <Social
-                platform={social.platform}
-                url={social.url}
-                svg={social.svg}
-              />
-            );
-          })
-        }
-      </div>
+      <div class="copyright">Copyright © 2025 Stefano Pitton</div>
       <div class="footer-spacer footer-spacer--right">+</div>
     </div>
-    <div class="footer-rights">Copyright © 2025 Stefano Pitton</div>
   </div>
 </footer>

@@ -4,6 +4,7 @@ import "../styles/global.css";
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Main from "../components/Main.astro";
 
 import { SITE_CONFIG } from "@/config";
 const language = SITE_CONFIG.language || "en-US";
@@ -17,9 +18,9 @@ const bodyContainer = "body-container" + " " + pageStyle;
   <body class="body">
     <div class={bodyContainer}>
       <Header />
-      <main class="main">
+      <Main>
         <slot />
-      </main>
+      </Main>
       <Footer />
     </div>
   </body>

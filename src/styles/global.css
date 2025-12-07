@@ -116,17 +116,16 @@ h3 {
 
 .body {
   background-color: var(--color-accent);
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
 }
 
 /* Used to set the white page on top of
  * the accented body color. This way, we will see the accented
  * color only when scrolling at the edges. */
 .body-container {
+  width: 100vw;
   min-height: 100vh;
-  width: 100%;
-  height: 100%;
   background-color: white;
 
   display: flex;
@@ -158,30 +157,26 @@ h3 {
 /* *** Header                     */
 /* ****************************** */
 
-.body-header {
+.header-container {
   position: sticky;
   top: 0;
-
-  height: var(--header-height);
-
+  min-height: var(--header-height);
   width: 100%; /* Use 100% instead of left/right 0 for simplicity */
-
-  background-color: var(--color-background);
-  border-bottom: var(--border-size) solid var(--color-text);
-  margin-bottom: 2px;
-
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: var(--color-background);
+  border-bottom: var(--border-size) solid var(--color-text);
 }
 
 .navigation {
-  width: var(--content-max-width);
+  width: min(100%, var(--content-max-width));
   height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-
+  padding: calc(1 * var(--spacing-unit));
+  margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -213,17 +208,91 @@ h3 {
 
 .navigation-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: calc(3 * var(--spacing-unit));
-  font-variation-settings:
-    "wght" 500,
-    "MONO" 1;
+  font-size: 1.1rem;
+  font-variation-settings: "wght" 500;
 }
 
 .navigation-spacer {
   text-align: right;
   font-size: 2rem;
-  font-variation-settings: "wght" 200;
+  font-variation-settings: "wght" 300;
+}
+
+/* ****************************** */
+/* *** Footer                     */
+/* ****************************** */
+
+.footer {
+  width: 100%;
+  height: 100%;
+  color: var(--color-background);
+  background: var(--color-text);
+  margin-top: calc(6 * var(--spacing-unit));
+  padding-bottom: calc(3 * var(--spacing-unit));
+}
+
+.footer-container {
+  width: min(100%, var(--content-max-width));
+  padding: calc(3 * var(--spacing-unit)) 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-variation-settings: "wght" 500;
+}
+
+.footer-link a {
+  display: flex;
+  align-items: center;
+  padding: 0 calc(1 * var(--spacing-unit));
+  gap: 1rem;
+  color: var(--color-background);
+}
+
+.footer-copyright {
+  margin-top: calc(1 * var(--spacing-unit));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright,
+.footer-spacer {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.copyright {
+  flex-grow: 2;
+  text-align: center;
+  font-size: 1.1rem;
+  font-variation-settings: "wght" 300;
+}
+
+.footer-spacer {
+  font-size: 2rem;
+  font-variation-settings: "wght" 300;
+}
+
+.footer-spacer--left {
+  text-align: left;
+}
+
+.footer-spacer--right {
+  text-align: right;
 }
 
 /* ****************************** */
@@ -231,9 +300,9 @@ h3 {
 /* ****************************** */
 
 .main {
-  width: var(--content-max-width);
-  margin-left: auto;
-  margin-right: auto;
+  width: min(100%, var(--content-max-width));
+  margin: 0 auto;
+  padding: calc(1 * var(--spacing-unit));
   flex-grow: 1;
 }
 
@@ -316,11 +385,6 @@ h3 {
   justify-content: space-between;
 }
 
-.index-image-container {
-  align-items: center;
-  text-align: center;
-}
-
 /* Links */
 a {
   font-size: inherit;
@@ -329,86 +393,10 @@ a {
   text-decoration-thickness: var(--border-size);
   text-decoration-color: var(--color-accent);
   transition: color 0.2s ease;
-}
-
-/* ****************************** */
-/* *** Footer                     */
-/* ****************************** */
-
-.footer {
-  color: white;
-  background: var(--color-text);
-  margin-top: calc(7 * var(--spacing-unit));
-  padding-bottom: calc(3 * var(--spacing-unit));
-  gap: calc(7 * var(--spacing-unit));
-
-  width: 100%; /* Use 100% instead of left/right 0 for simplicity */
-  height: 100%;
-}
-
-.footer-container {
-  width: var(--content-max-width);
-  padding-top: calc(3 * var(--spacing-unit));
-  padding-bottom: calc(5 * var(--spacing-unit));
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.footer-contacts {
-  display: flex;
-}
-
-.footer-spacer,
-.footer-links {
-  display: flex;
-  gap: 30px;
-  flex-basis: auto;
-  flex-grow: 1;
-}
-
-.footer-spacer--left,
-.footer-spacer--right {
-  font-size: 2rem;
-  font-variation-settings: "wght" 200;
-}
-
-.footer-spacer--left {
-  justify-content: left;
-}
-
-.footer-spacer--right {
-  justify-content: right;
-}
-
-.footer-links {
-  display: flex;
-  flex-grow: 3;
-  justify-content: center;
-}
-
-.footer-link {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-link a {
-  display: flex; /* Makes the anchor a flexible container */
-  align-items: center; /* Vertically centers the text and the icon */
-  gap: 0.5rem; /* Adds space between the {platform} text and the <svg> icon */
-  color: white;
-}
-
-.footer-rights {
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  font-variation-settings: "wght" 200;
 }
+
+/* OTHER */
 
 .hero {
   display: flex;
@@ -429,18 +417,15 @@ a {
   align-items: center;
 }
 
-.about-image {
-  margin-top: calc(3 * var(--spacing-unit));
-  margin-top: calc(3 * var(--spacing-unit));
+.about-image,
+.index-image {
   width: 100%;
   height: auto;
   border: 1px solid var(--color-text);
 }
 
-.index-image {
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--color-text);
+.about-image {
+  margin-top: calc(3 * var(--spacing-unit));
 }
 
 .figure-caption {
@@ -540,4 +525,27 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   justify-content: center;
   gap: calc(1 * var(--spacing-unit));
   margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+@media (max-width: 750px) {
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navigation-spacer,
+  .footer-spacer {
+    display: none;
+  }
+
+  :root {
+    /* Reduce the base size to 15px (e.g., a 6.25% reduction from 16px) */
+    font-size: 80%; /* (Calculates to 15px) */
+  }
 }

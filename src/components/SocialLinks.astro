@@ -1,0 +1,32 @@
+---
+import type { SocialLink } from "@/types.ts";
+
+interface Props {
+  links: SocialLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="footer-links">
+  {
+    links.map((link) => {
+      return (
+        <div class="footer-link">
+          <a href={link.url}>
+            {link.platform}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d={link.svg} />
+            </svg>
+          </a>
+        </div>
+      );
+    })
+  }
+</div>
