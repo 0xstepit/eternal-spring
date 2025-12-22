@@ -1,0 +1,83 @@
+---
+layout: ../layouts/Base.astro
+
+---
+
+import Base from "../layouts/Base.astro";
+
+import { Image } from "astro:assets";
+
+import AboutImage from "../images/me-and-topolino.jpg";
+
+<h1>About</h1>
+
+<div class="decorator">
+  <span>{'*'}</span>
+  <span>{'*'}</span>
+  <span>{'*'}</span>
+</div>
+
+<p>
+	__Eternal Spring__ is a blog about the _random things_ I learn and experiment with.
+	I like taking notes, even for very short concepts, so, expect to find writing, notes,
+	and fragments on software, math, and martial arts.
+</p>
+
+<br />
+
+<p>
+	I'm Stefano, a software engineer based in Berlin.
+	I'm interested in distributed systems,
+	decentralized finance, and all the math around them.
+</p>
+
+<figure class="figure">
+<div class="figure-container">
+  <Image
+	class="about-image"
+	src={AboutImage}
+	alt="A shot of me and Topolino."
+	format="webp"
+	quality={80}
+  />
+  <figcaption class="figure-caption">
+	<p>Figure 1: A shot of me and Topolino.</p>
+  </figcaption>
+</div>
+</figure>
+
+<br />
+
+<p>
+	I mainly work on open-source projects,
+	and in the past years I contributed to the first stablecoin chain ([Noble Core](https://github.com/noble-assets/noble)),
+	a Cosmos SDK module to expose go-ethereum EVM ([evmos](https://github.com/evmos/evmos), [Cosmos SDK](https://github.com/cosmos/cosmos-sdk)),
+	and a bunch of other _interesting things_,
+	in particular an abstraction layer on top of cross-chain bridges
+	like IBC, CCTP, and Hyperlane called [Orbiter](https://github.com/noble-assets/orbiter)
+</p>
+
+<br />
+
+<p>
+	Before developing my passion for computers and finance, I did research at the intersection
+	of machine-learning and aerospace structural analysis. I was fascinated by instability
+	phenomena in cylindrical shapes and how to efficiently
+	optimize them without solving complex non-linear equations. It was incredible to
+	realize, despite the math being quite clear, that an instability phenomena can create
+	artistic shapes. Art in destruction, or destruction in the art? I spent around 1 year during my
+	PhD implementing [feed-forward neural nets](https://doi.org/10.1016/j.compstruct.2019.111513)
+	combined with bio-inspired optimization algorithms, like the particle swarm optimization. Why only 1
+	year? Well, I dropped out :)
+</p>
+
+<br />
+
+<p>
+	Work stuff aside, I love martial arts, and one day I dream of opening my own gym.
+	I practiced Judo for around 13 years.
+	When I was 18, I placed [3rd at the Italian championships](https://judoinside.com/judoka/96874/Stefano_Pitton/judo-career),
+	and I hold a second-dan black belt. If you’ve never tried judo, I strongly recommend it!
+	From Japan to China, I recently started studying Kung Fu, specifically the Wing Chun lineage
+	from Leung Ting.
+</p>

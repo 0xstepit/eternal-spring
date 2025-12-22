@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 
+import mdx from "@astrojs/mdx";
+
 const prettyCodeOptions = {
   theme: "github-light",
   keepBackground: false,
@@ -24,8 +26,13 @@ export default defineConfig({
     remarkPlugins: [],
     shikiConfig: {},
   },
+
   vite: {},
+
   devToolbar: {
     enabled: false,
   },
+
+  integrations: [mdx()],
 });
+

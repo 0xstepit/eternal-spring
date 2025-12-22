@@ -162,6 +162,7 @@ h3 {
 /* ****************************** */
 
 .header {
+  z-index: 100;
   position: sticky;
   top: 0;
 }
@@ -413,6 +414,7 @@ a {
   color: var(--color-text);
   text-align: center;
   text-decoration: underline;
+  text-underline-offset: 0.3rem;
   text-decoration-thickness: var(--border-size);
   text-decoration-color: var(--color-accent);
   transition: color 0.2s ease;
@@ -544,6 +546,23 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   justify-content: center;
   gap: calc(1 * var(--spacing-unit));
   margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+main a[href^="http"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.3em;
+  vertical-align: middle;
+
+  background-color: currentColor;
+
+  /* The Mask (The "Stencil") */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 
 @media (max-width: 700px) {
