@@ -16,8 +16,11 @@
     "@rehype-pretty/transformers": "^0.13.2",
     "astro": "^5.15.3",
     "jiti": "^2.6.1",
+    "katex": "^0.16.27",
     "mdast-util-to-string": "^4.0.0",
+    "rehype-katex": "^7.0.1",
     "rehype-pretty-code": "^0.14.1",
+    "remark-math": "^6.0.0",
     "shiki": "^3.17.0",
     "vue-eslint-parser": "^10.2.0"
   },

@@ -1,8 +1,9 @@
 import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
-
 import mdx from "@astrojs/mdx";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 const prettyCodeOptions = {
   theme: "github-light",
@@ -22,8 +23,8 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
     extendDefaultPlugins: true,
-    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
-    remarkPlugins: [],
+    rehypePlugins: [rehypeKatex, [rehypePrettyCode, prettyCodeOptions]],
+    remarkPlugins: [remarkMath],
     shikiConfig: {},
   },
 
@@ -35,4 +36,3 @@ export default defineConfig({
 
   integrations: [mdx()],
 });
-
