@@ -1,0 +1,44 @@
+---
+import type { NeighborWritings } from "@/types";
+
+interface Props {
+  neighbors: NeighborWritings;
+}
+
+const { neighbors } = Astro.props;
+---
+
+<div class="neighbor-writing-container">
+  <div class="neighbor-writing neighbor-writing-left">
+    {
+      neighbors.previous && (
+        <a href={`/writings/${neighbors.previous?.url}`}>
+          <div class="neighbor-writing-left">
+            <img
+              src="/public/icons/larrow.svg"
+              alt="home icon"
+              style="width: 24px; height: 24px;"
+            />
+            <span>{neighbors.previous?.title}</span>
+          </div>
+        </a>
+      )
+    }
+  </div>
+  <div class="neighbor-writing neighbor-writing-right">
+    {
+      neighbors.next && (
+        <a href={`/writings/${neighbors.next?.url}`}>
+          <div class="neighbor-writing-right">
+            <span>{neighbors.next?.title}</span>
+            <img
+              src="/public/icons/rarrow.svg"
+              alt="home icon"
+              style="width: 24px; height: 24px;"
+            />
+          </div>
+        </a>
+      )
+    }
+  </div>
+</div>

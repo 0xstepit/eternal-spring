@@ -1,3 +1,5 @@
+import type { CollectionEntry } from "astro:content";
+
 export type NavigationLink = {
   name: string;
   path: string;
@@ -20,3 +22,20 @@ export type SiteConfig = {
   description: string;
   language: string;
 };
+
+export type WritingLink = {
+  url: string;
+  title: string;
+};
+
+export type NeighborWritings = {
+  previous?: WritingLink;
+  next?: WritingLink;
+};
+
+export type BlogEntry = CollectionEntry<"writings">;
+
+export enum WritingOrders {
+  Newest = 1,
+  Oldest,
+}

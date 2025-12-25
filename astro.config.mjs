@@ -27,12 +27,9 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     shikiConfig: {},
   },
-
   vite: {},
-
   devToolbar: {
     enabled: false,
   },
-
   integrations: [mdx()],
 });

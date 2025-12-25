@@ -1,3 +1,5 @@
+import type { NeighborWritings } from "@/types";
+
 export function toPostDate(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
@@ -32,3 +34,5 @@ export function getDay(date: Date): string {
 
   return date.toLocaleDateString(undefined, options);
 }
+
+export function getWritingNeighbors(): NeighborWritings {}

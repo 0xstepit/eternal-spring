@@ -6,6 +6,8 @@ import type { GetStaticPaths } from "astro";
 import { toPostDate, getDay, getMonth, getYear } from "../../scripts/dates";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
+import { getNeighbors } from "@/scripts/posts";
+import NextPrevWritings from "@/components/NextPrevWritings.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection("writings", ({ data }) => {
@@ -37,22 +39,38 @@ const day = getDay(postDate);
 const month = getMonth(postDate).toLocaleLowerCase();
 const year = getYear(postDate);
 const formattedDate = toPostDate(postDate);
+
+// Get neighbor writings
+
+const n = await getNeighbors(post.id);
 ---
 
-<Base pageTitle={post.id} pageStyle={"dotted"}>
+<!-- <Base pageTitle={post.id} pageStyle={"dotted"}> -->
+<Base pageTitle={post.id} pageStyle={""}>
   <article class="article">
     <header class="article-header">
       <h1>{post.data.title}</h1>
 
+      {
+        post.data.tags.length > 0 && (
+          <ul class="post-tags">
+            {post.data.tags.map((tag: string) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+        )
+      }
+
       <p class="article-meta">
-        <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
-
-        Published on
-
-        <a href={`https://www.onthisday.com/date/${year}/${month}/${day}`}
-          ><time>{formattedDate}</time></a
-        > by
+        <span>Published by</span>
         <span class="article-author">{post.data.author}</span>
+        <span>on</span>
+        <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
+        <span class="article-meta-date">
+          <a href={`https://www.onthisday.com/date/${year}/${month}/${day}`}
+            ><time>{formattedDate}</time></a
+          ></span
+        >
       </p>
 
       <p class="article-summary">{post.data.summary}</p>
@@ -68,15 +86,8 @@ const formattedDate = toPostDate(postDate);
       <Content />
     </div>
 
-    <!-- <footer class="article-footer"> -->
-    <!--   <div class="tags"> -->
-    <!--     <a href="/tags/html">HTML</a> -->
-    <!--     <a href="/tags/css">CSS</a> -->
-    <!--   </div> -->
-    <!--   <nav class="post-navigation"> -->
-    <!--     <a href="/previous-post">&laquo; Previous Post</a> -->
-    <!--     <a href="/next-post">Next Post &raquo;</a> -->
-    <!--   </nav> -->
-    <!-- </footer> -->
+    <div class="article-neighbor">
+      <NextPrevWritings neighbors={n} />
+    </div>
   </article>
 </Base>

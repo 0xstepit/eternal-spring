@@ -26,11 +26,12 @@ export const SOCIAL_LINKS: SocialLinks = [
 ];
 
 export const SITE_CONFIG: SiteConfig = {
-  website: "eternalspring.xyx(?)",
+  website: "eternalspring.xyz",
   title: "eternal-spring",
   author: "stepit",
   description: "Incomplete notes of a curious engineer.",
   language: "en-US",
+  postOrder: "",
 };
 
 export const NOTES_COLLECTION = "writings";

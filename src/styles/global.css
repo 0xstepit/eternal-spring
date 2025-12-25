@@ -20,7 +20,7 @@
 
   /* Typography */
   --font-sans: "Recursive", monospace;
-  --font-size: 1.125rem; /* used by the rem*/
+  --font-size: 1.125rem; /* used by the rem ---> not working*/
   --casl: "casl" 0;
   --wght: "wght" 400;
   --slnt: "slnt" 0;
@@ -28,7 +28,7 @@
   --CRSV: "CRSV" 0;
 
   /* Layout */
-  --content-max-width: 720px;
+  --content-max-width: 780px;
   --spacing-unit: 1rem;
   --border-size: calc(0.1 * var(--spacing-unit));
   --header-height: 100px;
@@ -59,12 +59,14 @@ em {
   font-variation-settings: "slnt" -15;
 }
 
-b {
-  font-variation-settings: "wght" 600;
+strong {
+  font-variation-settings: "wght" 700;
 }
 
-ul,
-ol {
+header ul,
+header ol,
+footer ul,
+footer ol {
   list-style: none;
 }
 
@@ -93,13 +95,20 @@ h2,
 h3,
 h4,
 h5 {
-  margin-bottom: calc(2 * var(--spacing-unit));
+  margin-bottom: calc(1 * var(--spacing-unit));
+  font-variation-settings: "wght" 700;
+}
+
+p {
+  margin-bottom: calc(1 * var(--spacing-unit));
+  text-align: justify;
 }
 
 h1 {
   font-size: 2.5rem;
   font-variation-settings: "wght" 700;
   line-height: 1.2;
+  margin-bottom: calc(1 * var(--spacing-unit));
 }
 
 /* h2 is not used, but let free for futureproof */
@@ -109,7 +118,22 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  font-variation-settings: "wght" 600;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.post-cards {
+  padding-left: 0;
+}
+
+.post-link {
+  font-size: 1.2rem;
+  font-variation-settings: "wght" 400;
   margin-top: calc(-0.5 * var(--spacing-unit));
   margin-bottom: calc(0 * var(--spacing-unit));
 }
@@ -163,7 +187,7 @@ h3 {
 
 .header {
   z-index: 100;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
 }
 
@@ -209,12 +233,12 @@ h3 {
   font-variation-settings:
     "wght" 700,
     "MONO" 1;
-  background: var(--color-background-logo);
   text-decoration: none;
-  padding: calc(0.5 * var(--spacing-unit));
 }
 
 .span-logo {
+  background: var(--color-background-logo);
+  padding: calc(0.5 * var(--spacing-unit));
 }
 
 .logo-link {
@@ -333,7 +357,7 @@ h3 {
 .post-cards {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1rem;
 }
 
 .spacer {
@@ -349,19 +373,35 @@ h3 {
   margin-bottom: calc(2 * var(--spacing-unit));
 }
 
+.article h2,
+h3,
+h4,
+h5 {
+  border-bottom: 0.1px solid var(--color-grey);
+}
+
+li::marker {
+  color: var(--color-dark-grey);
+}
+
 .article-meta {
+  display: flex;
+  font-variation-settings: "wght" 300;
+}
+
+.article-meta-date {
   font-variation-settings:
     "slnt" -15,
     "wght" 300;
 }
 
 .post-date {
-  color: var(--color-dark-grey);
   font-size: 0.7em;
   margin-bottom: 0;
   font-style: italic;
   font-variation-settings:
     "slnt" -15,
+    "wght" 300,
     "MONO" 1;
 }
 
@@ -398,7 +438,11 @@ h3 {
 .tag-hash,
 .tag-text {
   font-size: 0.7rem;
-  color: var(--color-dark-grey);
+}
+
+.tag-text::before {
+  content: "#";
+  margin-right: 0.1rem;
 }
 
 .index-container {
@@ -548,21 +592,76 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   margin-bottom: calc(2 * var(--spacing-unit));
 }
 
-main a[href^="http"]::after {
+ul,
+ol {
+  padding-left: 3em;
+  overflow: auto;
+}
+
+blockquote {
+  background-color: var(--color-light-grey);
+  padding: 1rem;
+  border: var(--border-size) solid var(--color-grey);
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+.katex {
+  background-color: var(--color-light-grey);
+  padding: 0 0.3rem;
+  border-radius: 3px;
+}
+.katex-display {
+  background-color: var(--color-light-grey);
+  padding: 1.5rem 1rem;
+  border-radius: 3px;
+}
+
+main a[href^="http"]::before {
   content: "";
   display: inline-block;
   width: 0.85em;
   height: 0.85em;
-  margin-left: 0.3em;
+  margin-right: 0.3em;
   vertical-align: middle;
 
-  background-color: currentColor;
+  background-color: var(--color-dark-grey);
 
   /* The Mask (The "Stencil") */
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
   mask-repeat: no-repeat;
   mask-size: contain;
+}
+
+.article-neighbor {
+  margin-top: calc(5 * var(--spacing-unit));
+}
+
+.neighbor-writing-container {
+  display: flex;
+}
+
+.neighbor-writing {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+}
+
+.neighbor-writing-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+}
+
+.neighbor-writing-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  gap: 1rem;
 }
 
 @media (max-width: 700px) {
@@ -599,5 +698,9 @@ main a[href^="http"]::after {
 
   .navigation-logo {
     margin-bottom: calc(1 * var(--spacing-unit));
+  }
+
+  .neighbor-writing-container {
+    flex-direction: column;
   }
 }
