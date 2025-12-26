@@ -72,7 +72,7 @@ footer ol {
 
 html {
   font-size: 100%;
-  line-height: 1.6;
+  line-height: 2;
 
   color: var(--color-text);
 
@@ -386,6 +386,7 @@ li::marker {
 
 .article-meta {
   display: flex;
+  gap: 0.5rem;
   font-variation-settings: "wght" 300;
 }
 
@@ -416,11 +417,12 @@ li::marker {
   gap: 0.1rem;
   padding: 0;
   margin: 0;
+  gap: 0.5rem;
 }
 
 .post-tag {
   font-size: 0.8em;
-  padding-right: 0.3rem;
+  padding: 3rem;
   font-weight: 100;
   display: inline-block;
 }
@@ -431,7 +433,7 @@ li::marker {
   align-items: center;
   background: var(--color-light-grey);
   border: 0.1px solid var(--color-grey);
-  padding: 0.1rem;
+  padding: 0rem 0.3rem;
   border-radius: 3px;
 }
 
@@ -458,7 +460,7 @@ a {
   color: var(--color-text);
   text-align: center;
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.1rem;
   text-decoration-thickness: var(--border-size);
   text-decoration-color: var(--color-accent);
   transition: color 0.2s ease;
@@ -594,16 +596,35 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 
 ul,
 ol {
-  padding-left: 3em;
+  padding: 0 3em;
   overflow: auto;
 }
 
-blockquote {
+.definition {
   background-color: var(--color-light-grey);
   padding: 1rem;
   border: var(--border-size) solid var(--color-grey);
   border-radius: 5px;
   margin: 1rem 0;
+}
+
+.definition-header {
+  border-bottom: 1px;
+  padding-bottom: 1rem;
+}
+
+.definition-type {
+  color: var(--color-dark-grey);
+}
+
+code {
+  background-color: var(--color-light-grey);
+  padding: 0.3rem 0.3rem;
+  border-radius: 3px;
+}
+
+.katex .text {
+  font-family: "Recursive", monospace;
 }
 
 .katex {
@@ -613,7 +634,7 @@ blockquote {
 }
 .katex-display {
   background-color: var(--color-light-grey);
-  padding: 1.5rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 3px;
 }
 

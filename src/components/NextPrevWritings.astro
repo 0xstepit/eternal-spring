@@ -15,9 +15,9 @@ const { neighbors } = Astro.props;
         <a href={`/writings/${neighbors.previous?.url}`}>
           <div class="neighbor-writing-left">
             <img
-              src="/public/icons/larrow.svg"
+              src="/public/icons/larrow2.svg"
               alt="home icon"
-              style="width: 24px; height: 24px;"
+              style="width: 1rem; height: 1rem;"
             />
             <span>{neighbors.previous?.title}</span>
           </div>
@@ -32,9 +32,9 @@ const { neighbors } = Astro.props;
           <div class="neighbor-writing-right">
             <span>{neighbors.next?.title}</span>
             <img
-              src="/public/icons/rarrow.svg"
+              src="/public/icons/rarrow2.svg"
               alt="home icon"
-              style="width: 24px; height: 24px;"
+              style="width: 1rem; height: 1rem;"
             />
           </div>
         </a>

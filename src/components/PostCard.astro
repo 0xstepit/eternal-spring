@@ -17,20 +17,15 @@ const formatterDate = toPostDate(date);
 <article class="post-card">
   <header class="post-header">
     <time class="post-date">{formatterDate}</time>
-    <h3 class="post-title">
-      <a href={url} class="post-link">{title}</a>
-    </h3>
+    <a href={url} class="post-link">{title}</a>
   </header>
 
   {
     tags.length > 0 && (
       <ul class="post-tags">
         {tags.map((tag: string) => (
-          <li class="post-tag">
-            <div class="tag-container">
-              <span class="tag-hash">#</span>
-              <span class="tag-text">{tag}</span>
-            </div>
+          <li class="post-tag tag-container">
+            <span class="tag-text">{tag}</span>
           </li>
         ))}
       </ul>

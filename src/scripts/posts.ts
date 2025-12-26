@@ -37,14 +37,14 @@ export async function getNeighbors(slug: string): Promise<NeighborWritings> {
 
       console.log(postIndex);
       if (postIndex !== 0) {
-        nearWritings.previous = {
+        nearWritings.next = {
           url: sortedPosts[postIndex - 1].id,
           title: sortedPosts[postIndex - 1].data.title,
         };
       }
 
       if (postIndex !== sortedPosts.length - 1) {
-        nearWritings.next = {
+        nearWritings.previous = {
           url: sortedPosts[postIndex + 1].id,
           title: sortedPosts[postIndex + 1].data.title,
         };
