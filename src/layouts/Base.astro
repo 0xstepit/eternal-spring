@@ -4,28 +4,32 @@ import "../styles/global.css";
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Main from "../components/Main.astro";
 
+import type { PageStyle } from "@/types.ts";
 import { SITE_CONFIG } from "@/config";
 const language = SITE_CONFIG.language || "en-US";
 
+interface Props {
+  pageTitle: string;
+  pageStyle: PageStyle;
+}
+
 const { pageTitle, pageStyle } = Astro.props;
+
 const bodyContainer = "body-container" + " " + pageStyle;
 ---
 
 <html lang={language}>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-  />
   <Head pageTitle={pageTitle} />
-  <body class="body">
+  <body>
     <div class={bodyContainer}>
       <Header />
-      <Main>
+      <main>
         <slot />
-      </Main>
-      <Footer />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   </body>
 </html>

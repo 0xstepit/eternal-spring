@@ -1,6 +1,16 @@
-import { type NeighborWritings, WritingOrders } from "@/types";
+import { type WritingNeighbors, WritingOrders } from "@/types";
 import { getCollection } from "astro:content";
-import type { BlogEntry } from "../types.ts";
+import type { WritingEntry } from "../types.ts";
+
+// export async function getWritingCollection()
+
+export function writingCollectionFilter<T extends { "to-publish": boolean }>({
+  data,
+}: {
+  data: T;
+}): boolean {
+  return data["to-publish"] === true;
+}
 
 export function sortByDate<T extends { data: { date: Date } }>({
   posts,
@@ -19,14 +29,18 @@ export function sortByDate<T extends { data: { date: Date } }>({
   return sortedPosts;
 }
 
-export async function getNeighbors(slug: string): Promise<NeighborWritings> {
-  const nearWritings: NeighborWritings = {};
+// Returns the previous and next writings from the Astro collection associated with a
+// particular writing referenced by slug.
+export async function getWritingNeighbors(
+  slug: string,
+): Promise<WritingNeighbors> {
+  const nearWritings: WritingNeighbors = {};
 
   const allPosts = await getCollection("writings", ({ data }) => {
     return data["to-publish"] === true;
   });
 
-  const sortedPosts: BlogEntry[] = sortByDate({
+  const sortedPosts: WritingEntry[] = sortByDate({
     posts: allPosts,
   });
 

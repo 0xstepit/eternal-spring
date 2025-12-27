@@ -1,18 +1,22 @@
 ---
 import Base from "../../layouts/Base.astro";
 
+import { SITE_CONFIG } from "@/config";
+
 import type { GetStaticPaths } from "astro";
 
-import { toPostDate, getDay, getMonth, getYear } from "../../scripts/dates";
+import { toFormattedDate, getDateComponents } from "../../scripts/dates";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
-import { getNeighbors } from "@/scripts/posts";
+import {
+  getWritingNeighbors,
+  writingCollectionFilter,
+} from "@/scripts/writings";
 import NextPrevWritings from "@/components/NextPrevWritings.astro";
 
+// This is required for dynamic routes.
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getCollection("writings", ({ data }) => {
-    return data["to-publish"] === true;
-  });
+  const posts = await getCollection("writings", writingCollectionFilter);
 
   console.log(`Total blog posts: ${posts.length}`);
 
@@ -35,20 +39,19 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const postDate = post.data.date;
-const day = getDay(postDate);
-const month = getMonth(postDate).toLocaleLowerCase();
-const year = getYear(postDate);
-const formattedDate = toPostDate(postDate);
+const [day, _month, year] = getDateComponents(postDate);
+const month = _month.toLocaleLowerCase();
+const formattedDate = toFormattedDate(postDate);
 
-// Get neighbor writings
-
-const n = await getNeighbors(post.id);
+// Get current writing neighbors.
+const neighbors = await getWritingNeighbors(post.id);
 ---
 
-<!-- <Base pageTitle={post.id} pageStyle={"dotted"}> -->
-<Base pageTitle={post.id} pageStyle={""}>
+<Base pageTitle={post.id} pageStyle={"clean"}>
   <article class="article">
     <header class="article-header">
+      <!-- https://github.com/0xstepit/eternal-spring/blob/main/src/writings/time.md -->
+
       <h1>{post.data.title}</h1>
 
       <p class="article-meta">
@@ -73,7 +76,7 @@ const n = await getNeighbors(post.id);
         )
       }
 
-      <p class="article-summary">{post.data.summary}</p>
+      {post.data.summary && <p class="article-summary">{post.data.summary}</p>}
     </header>
 
     <div class="decorator">
@@ -86,8 +89,14 @@ const n = await getNeighbors(post.id);
       <Content />
     </div>
 
+    <div class="article-footer">
+      <a href={`${SITE_CONFIG.repo}/blob/main/src/writings/${post.id}.md`}>
+        <span>Suggestions for improvement are always welcome!</span>
+      </a>
+    </div>
+
     <div class="article-neighbor">
-      <NextPrevWritings neighbors={n} />
+      <NextPrevWritings neighbors={neighbors} />
     </div>
   </article>
 </Base>

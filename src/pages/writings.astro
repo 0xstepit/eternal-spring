@@ -3,15 +3,15 @@ import "../styles/global.css";
 import Base from "../layouts/Base.astro";
 import PostCard from "../components/PostCard.astro";
 
-import { sortByDate } from "../scripts/posts";
-import type { BlogEntry } from "../types.ts";
+import { sortByDate } from "../scripts/writings.ts";
+import type { WritingEntry } from "../types.ts";
 
 import { getCollection, render } from "astro:content";
 const allPosts = await getCollection("writings", ({ data }) => {
   return data["to-publish"] === true;
 });
 
-const sortedPosts: BlogEntry[] = sortByDate({
+const sortedPosts: WritingEntry[] = sortByDate({
   posts: allPosts,
 });
 
@@ -31,7 +31,7 @@ const postsWithMetaData = await Promise.all(
 const pageTitle = "Blog";
 ---
 
-<Base pageTitle={pageTitle}>
+<Base pageTitle={pageTitle} pageStyle="clean">
   <div class="writings-container">
     <h1>All writings</h1>
 

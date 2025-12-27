@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  /* To have max width to take into account border, margin, and padding. */
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure,
+figcaption,
+blockquote {
+  margin: 0;
+  padding: 0;
+}

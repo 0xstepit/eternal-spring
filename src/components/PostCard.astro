@@ -1,5 +1,5 @@
 ---
-import { toPostDate } from "../scripts/dates";
+import { toFormattedDate } from "../scripts/dates";
 
 interface Props {
   url: string;
@@ -11,7 +11,7 @@ interface Props {
 
 const { url, title, summary, date, tags } = Astro.props;
 
-const formatterDate = toPostDate(date);
+const formatterDate = toFormattedDate(date);
 ---
 
 <article class="post-card">
