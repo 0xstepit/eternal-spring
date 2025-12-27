@@ -20,7 +20,7 @@
   --font-sans: "Recursive", monospace;
   --font-size: 1.125rem; /* used by the rem ---> not working*/
   --casl: "casl" 0;
-  --wght: "wght" 400;
+  --wght: "wght" 300;
   --slnt: "slnt" 0;
   --mono: "MONO" 1;
   --CRSV: "CRSV" 0;
@@ -29,5 +29,5 @@
   --content-max-width: 780px;
   --spacing-unit: 1rem;
   --border-size: calc(0.1 * var(--spacing-unit));
-  --header-height: 100px;
+  --header-height: 70px;
 }

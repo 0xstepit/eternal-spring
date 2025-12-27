@@ -17,8 +17,8 @@ export const SITE_CONFIG: SiteConfig = {
 // the website logo.
 export const NAV_LINKS: NavigationLinks = [
   { name: "Eternal Spring", path: "/" },
-  { name: "Writings", path: "/writings" },
-  { name: "About", path: "/about" },
+  { name: "./Writings", path: "/writings" },
+  { name: "./About", path: "/about" },
 ];
 
 // Defines the social links to displayied in the website.
