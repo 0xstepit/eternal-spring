@@ -415,7 +415,6 @@ li::marker {
 a {
   font-size: inherit;
   color: var(--color-text);
-  text-align: center;
   text-decoration: underline;
   text-underline-offset: 0.1rem;
   text-decoration-thickness: var(--border-size);
@@ -654,6 +653,7 @@ code {
     /* Reduce the base size to 15px (e.g., a 6.25% reduction from 16px) */
     font-size: 80%; /* (Calculates to 15px) */
     --header-height: 70px;
+    line-height: 1.7rem;
   }
 
   .header-container {
