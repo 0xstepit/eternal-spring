@@ -1,0 +1,68 @@
+/* ============================== */
+/* === Header                     */
+/* ============================== */
+
+header {
+  z-index: 100;
+  /* position: sticky; */
+  top: 0;
+
+  min-height: var(--header-height);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-background);
+}
+
+.navigation {
+  width: min(100%, var(--content-max-width));
+  height: 100%;
+  padding: calc(1 * var(--spacing-unit));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border-size) solid var(--color-text);
+}
+
+.logo-container,
+.navigation-links,
+.navigation-spacer {
+  flex-basis: 0;
+  flex-grow: 2;
+}
+
+.navigation-links {
+  width: 100%;
+  flex-grow: 3;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navigation-logo {
+  text-decoration: none;
+}
+
+.span-logo {
+  background: var(--color-background-logo);
+  padding: calc(0.5 * var(--spacing-unit));
+}
+
+.logo-link {
+  color: var(--color-text-logo);
+  text-decoration: none;
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navigation-spacer {
+  text-align: right;
+}

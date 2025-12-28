@@ -16,8 +16,8 @@ const formatterDate = toFormattedDate(date);
 
 <article class="post-card">
   <header class="post-header">
-    <time class="post-date">{formatterDate}</time>
-    <a href={url} class="post-link">{title}</a>
+    <time class="post-date italic smaller">{formatterDate}</time>
+    <a href={url} class="post-link bold">{title}</a>
   </header>
 
   {
@@ -25,7 +25,7 @@ const formatterDate = toFormattedDate(date);
       <ul class="post-tags">
         {tags.map((tag: string) => (
           <li class="post-tag tag-container">
-            <span class="tag-text">{tag}</span>
+            <span class="tag-text smaller">{tag}</span>
           </li>
         ))}
       </ul>

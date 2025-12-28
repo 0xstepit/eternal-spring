@@ -56,10 +56,10 @@ const neighbors = await getWritingNeighbors(post.id);
 
       <p class="article-meta">
         <span>Published by</span>
-        <span class="article-author">{post.data.author}</span>
+        <span class="article-author bold">{post.data.author}</span>
         <span>on</span>
         <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
-        <span class="article-meta-date">
+        <span class="article-meta-date italic">
           <a href={`https://www.onthisday.com/date/${year}/${month}/${day}`}
             ><time>{formattedDate}</time></a
           ></span
@@ -68,7 +68,7 @@ const neighbors = await getWritingNeighbors(post.id);
 
       {
         post.data.tags.length > 0 && (
-          <ul class="post-tags">
+          <ul class="post-tags smaller">
             {post.data.tags.map((tag: string) => (
               <li class="post-tag tag-container">{tag}</li>
             ))}
@@ -89,13 +89,13 @@ const neighbors = await getWritingNeighbors(post.id);
       <Content />
     </div>
 
-    <div class="article-footer">
+    <div class="article-footer smaller">
       <a href={`${SITE_CONFIG.repo}/blob/main/src/writings/${post.id}.md`}>
         <span>Suggestions for improvement are always welcome!</span>
       </a>
     </div>
 
-    <div class="article-neighbor">
+    <div class="article-neighbor bold">
       <NextPrevWritings neighbors={neighbors} />
     </div>
   </article>

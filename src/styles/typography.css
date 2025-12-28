@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+
+:root {
+  /* Typography */
+  --font-sans: "Recursive", monospace;
+  --font-size: 1.125rem; /* used by the rem ---> not working*/
+  --casl: "casl" 0;
+  --wght: "wght" 300;
+  --slnt: "slnt" 0;
+  --mono: "MONO" 1;
+  --CRSV: "CRSV" 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  --mono-v: var(--mono);
+  --casl-v: var(--casl);
+  --wght-v: var(--wght);
+  --slnt-v: var(--slnt);
+  --crsv-v: var(--CRSV);
+
+  font-variation-settings:
+    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+}
+
+em,
+.italic,
+.figure-caption {
+  --slnt-v: "slnt" -15;
+  font-variation-settings:
+    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+}
+
+strong,
+.principal-link,
+.bold {
+  --wght-v: "wght" 500;
+  font-variation-settings:
+    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+}
+
+.thin {
+  --wght-v: "wght" 300;
+  font-variation-settings:
+    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navigation-logo {
+  --wght-v: "wght" 700;
+  font-variation-settings:
+    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+}
+
+p {
+  --wght-v: "wght" 300;
+  font-variation-settings:
+    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.smaller,
+.figure-caption {
+  font-size: 0.8rem;
+}
+
+.spacer {
+  font-size: 2rem;
+}
+
+a {
+  font-size: inherit;
+}
+
+code span {
+  font-size: 0.7rem;
+}
+
+.katex .text {
+  font-family: "Recursive", monospace;
+  font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 80%;
+  }
+}
