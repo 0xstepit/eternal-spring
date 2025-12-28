@@ -19,7 +19,7 @@
   /* Layout */
   --content-max-width: 780px;
   --spacing-unit: 1rem;
-  --border-size: calc(0.1 * var(--spacing-unit));
+  --border-size: 0.1px;
   --header-height: 70px;
 }
 
