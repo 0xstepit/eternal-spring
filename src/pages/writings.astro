@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css";
 import Base from "../layouts/Base.astro";
-import PostCard from "../components/PostCard.astro";
+import PostCardOneline from "../components/PostCardOneline.astro";
 
-import { sortByDate } from "../scripts/writings.ts";
+import { sortByDate, groupByYear } from "../scripts/writings.ts";
 import type { WritingEntry } from "../types.ts";
 
 import { getCollection, render } from "astro:content";
@@ -14,6 +14,8 @@ const allPosts = await getCollection("writings", ({ data }) => {
 const sortedPosts: WritingEntry[] = sortByDate({
   posts: allPosts,
 });
+
+const groupedPosts = groupByYear(sortedPosts);
 
 const postsWithMetaData = await Promise.all(
   sortedPosts.map(async (entry) => {
@@ -41,20 +43,38 @@ const pageTitle = "Blog";
       <span>+</span>
     </div>
 
+    <p>All the wriitings divided by year.</p>
+
     <ul class="post-cards">
       {
-        postsWithMetaData.map(({ entry, minutesRead }) => {
-          return (
-            <PostCard
-              url={`/writings/${entry.id}/`}
-              title={entry.data.title}
-              summary={entry.data.summary}
-              date={entry.data.date}
-              tags={entry.data.tags}
-            />
-          );
-        })
+        Array.from(groupedPosts.entries()).map(([year, posts]) => (
+          <div class="group-writings">
+            <h2>{year}</h2>
+            {posts.map((entry) => (
+              <PostCardOneline
+                url={`/writings/${entry.id}/`}
+                title={entry.data.title}
+                summary={entry.data.summary}
+                date={entry.data.date}
+                tags={entry.data.tags}
+              />
+            ))}
+          </div>
+        ))
       }
+      <!-- { -->
+      <!--   postsWithMetaData.map(({ entry, minutesRead }) => { -->
+      <!--     return ( -->
+      <!--       <PostCard -->
+      <!--         url={`/writings/${entry.id}/`} -->
+      <!--         title={entry.data.title} -->
+      <!--         summary={entry.data.summary} -->
+      <!--         date={entry.data.date} -->
+      <!--         tags={entry.data.tags} -->
+      <!--       /> -->
+      <!--     ); -->
+      <!--   }) -->
+      <!-- } -->
     </ul>
   </div>
 </Base>

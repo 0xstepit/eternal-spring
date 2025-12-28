@@ -1,0 +1,21 @@
+---
+import { toFormattedDate, getMonthShort, getDay } from "../scripts/dates";
+
+interface Props {
+  url: string;
+  title: string;
+  date: Date;
+}
+
+const { url, title, date } = Astro.props;
+
+const month = getMonthShort(date);
+const day = getDay(date);
+---
+
+<article class="post-card">
+  <div class="post-header-oneline">
+    <time class="post-date italic smaller">{`${month} ${day}`}</time>
+    <a href={url} class="post-link">{title}</a>
+  </div>
+</article>

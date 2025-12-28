@@ -17,6 +17,14 @@ export function getMonth(date: Date): string {
   return date.toLocaleDateString(undefined, options);
 }
 
+export function getMonthShort(date: Date): string {
+  const options: Intl.DateTimeFormatOptions = {
+    month: "short",
+  };
+
+  return date.toLocaleDateString(undefined, options);
+}
+
 export function getYear(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",

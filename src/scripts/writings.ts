@@ -29,6 +29,22 @@ export function sortByDate<T extends { data: { date: Date } }>({
   return sortedPosts;
 }
 
+export function groupByYear<T extends { data: { date: Date } }>(
+  posts: T[],
+): Map<number, T[]> {
+  const groupedWritings = new Map<number, T[]>();
+  posts.forEach((writing) => {
+    const year = writing.data.date.getFullYear();
+
+    const yearPosts = groupedWritings.get(year) || [];
+
+    yearPosts.push(writing);
+    groupedWritings.set(year, yearPosts);
+  });
+
+  return groupedWritings;
+}
+
 // Returns the previous and next writings from the Astro collection associated with a
 // particular writing referenced by slug.
 export async function getWritingNeighbors(
