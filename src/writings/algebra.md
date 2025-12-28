@@ -162,6 +162,6 @@ Every group of prime order is cyclic.
 
 ## References
 
-1. https://en.wikipedia.org/wiki/Group_(mathematics)
-2. https://en.wikipedia.org/wiki/Abelian_group
+1. [Wikipedia - Group](<https://en.wikipedia.org/wiki/Group_(mathematics)>)
+2. [Wikipedia - Abelian Group](https://en.wikipedia.org/wiki/Abelian_group)
 3. [Wikipedia - Subgroup](https://en.wikipedia.org/wiki/Subgroup)

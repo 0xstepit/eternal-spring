@@ -214,17 +214,7 @@ a {
   transition: color 0.2s ease;
 }
 
-a {
-  white-space: normal;
-  word-break: break-all; /* Helps long URLs break anywhere */
-}
-
 /* OTHER */
-
-.hero {
-  display: flex;
-  flex-direction: column;
-}
 
 .figure {
   width: 100%;
