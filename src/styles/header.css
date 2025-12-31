@@ -14,7 +14,6 @@ header {
   align-items: center;
 
   background-color: var(--color-background);
-  border-bottom: var(--border-size) solid var(--color-text);
 }
 
 .navigation {
@@ -24,6 +23,7 @@ header {
   margin: 0 auto;
   display: flex;
   align-items: center;
+  border-bottom: var(--border-size) solid var(--color-text);
 }
 
 .logo-container,
