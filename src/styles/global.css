@@ -116,14 +116,20 @@ main {
 .post-header-oneline {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   line-height: 1.5rem;
-  gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .post-date {
   color: var(--color-dark-grey);
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.post-link {
+  flex-basis: 0;
+  flex-grow: 9;
 }
 
 .article-header {
@@ -456,5 +462,15 @@ code {
   ul,
   ol {
     padding: 0 2rem;
+  }
+
+  .post-date {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .post-link {
+    flex-basis: 0;
+    flex-grow: 5;
   }
 }
