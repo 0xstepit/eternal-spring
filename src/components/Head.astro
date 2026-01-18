@@ -53,4 +53,12 @@ const fullTitle = pageTitle === SITE_CONFIG.title
   <meta property="twitter:title" content={fullTitle} />
   <meta property="twitter:description" content={description} />
   <meta property="twitter:image" content={new URL(image, `https://${SITE_CONFIG.website}`)} />
+
+  <!-- RSS Feed -->
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title={SITE_CONFIG.title}
+    href={new URL("/rss.xml", `https://${SITE_CONFIG.website}`)}
+  />
 </head>
