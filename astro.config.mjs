@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
@@ -20,16 +21,15 @@ const prettyCodeOptions = {
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://eternalspring.xyz",
   markdown: {
     syntaxHighlight: false,
     extendDefaultPlugins: true,
     rehypePlugins: [rehypeKatex, [rehypePrettyCode, prettyCodeOptions]],
     remarkPlugins: [remarkMath],
-    shikiConfig: {},
   },
-  vite: {},
   devToolbar: {
     enabled: false,
   },
-  integrations: [mdx()],
+  integrations: [mdx(), sitemap()],
 });

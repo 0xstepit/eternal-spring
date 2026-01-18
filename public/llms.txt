@@ -1,0 +1,49 @@
+# Eternal Spring
+
+> Incomplete notes of a curious engineer.
+
+Eternal Spring is a personal blog by stepit, a software engineer interested in 
+cryptography, mathematics, and decentralized systems.
+
+## Topics
+
+The blog primarily covers:
+- **Mathematics**: Abstract algebra, group theory, field theory, and their applications
+- **Cryptography**: Elliptic curves, prime fields, and cryptographic primitives
+- **Software Engineering**: Design patterns, best practices, and technical deep-dives
+
+## Content
+
+### Writings
+All blog posts are available at: https://eternalspring.xyz/writings
+
+Current articles include:
+- Fields and field theory in abstract algebra
+- Elliptic curves with multiplication and addition operations
+- Rediscovering mathematics through abstract algebra
+
+### About
+Learn more about the author: https://eternalspring.xyz/about
+
+## Feeds
+
+- RSS Feed: https://eternalspring.xyz/rss.xml
+- Sitemap: https://eternalspring.xyz/sitemap-index.xml
+
+## Contact
+
+- GitHub: https://github.com/0xstepit
+- Twitter: https://x.com/0xstepit
+- LinkedIn: https://www.linkedin.com/in/stepit/
+
+## Technical Details
+
+This site is built with Astro and features:
+- LaTeX math rendering via KaTeX
+- Syntax highlighting for code blocks
+- Static site generation for fast performance
+
+## License
+
+Content is authored by stepit. Source code is available at:
+https://github.com/0xstepit/eternal-spring

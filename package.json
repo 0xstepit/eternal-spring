@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/upgrade": "^0.6.2",
     "@rehype-pretty/transformers": "^0.13.2",
     "astro": "^5.15.3",
