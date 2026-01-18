@@ -6,7 +6,7 @@ import PostCardOneline from "../components/PostCardOneline.astro";
 import { sortByDate, groupByYear } from "../scripts/writings.ts";
 import type { WritingEntry } from "../types.ts";
 
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 const allPosts = await getCollection("writings", ({ data }) => {
   return data["to-publish"] === true;
 });
@@ -16,19 +16,6 @@ const sortedPosts: WritingEntry[] = sortByDate({
 });
 
 const groupedPosts = groupByYear(sortedPosts);
-
-const postsWithMetaData = await Promise.all(
-  sortedPosts.map(async (entry) => {
-    // Call render() for each entry to get the injected metadata
-    const { remarkPluginFrontmatter } = await render(entry);
-
-    // Return the original entry data AND the extracted metadata
-    return {
-      entry,
-      minutesRead: remarkPluginFrontmatter.minutesRead,
-    };
-  }),
-);
 
 const pageTitle = "Blog";
 ---
@@ -62,19 +49,6 @@ const pageTitle = "Blog";
           </div>
         ))
       }
-      <!-- { -->
-      <!--   postsWithMetaData.map(({ entry, minutesRead }) => { -->
-      <!--     return ( -->
-      <!--       <PostCard -->
-      <!--         url={`/writings/${entry.id}/`} -->
-      <!--         title={entry.data.title} -->
-      <!--         summary={entry.data.summary} -->
-      <!--         date={entry.data.date} -->
-      <!--         tags={entry.data.tags} -->
-      <!--       /> -->
-      <!--     ); -->
-      <!--   }) -->
-      <!-- } -->
     </ul>
   </div>
 </Base>
