@@ -18,16 +18,10 @@ import NextPrevWritings from "@/components/NextPrevWritings.astro";
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection("writings", writingCollectionFilter);
 
-  console.log(`Total blog posts: ${posts.length}`);
-
-  return posts.map((post) => {
-    console.log(`Post ID: ${post.id}`);
-
-    return {
-      params: { slug: post.id },
-      props: { post },
-    };
-  });
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 };
 
 interface Props {

@@ -19,10 +19,9 @@ const { links } = Astro.props;
             <a
               href={link.path}
               class={
-                // Not used currently
                 currentPath === link.path
                   ? "navigation-link active"
-                  : "nvaigation-link"
+                  : "navigation-link"
               }
             >
               {link.name}

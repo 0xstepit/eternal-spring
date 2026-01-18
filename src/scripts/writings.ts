@@ -65,7 +65,6 @@ export async function getWritingNeighbors(
     if (post.id === slug) {
       postIndex = sortedPosts.indexOf(post);
 
-      console.log(postIndex);
       if (postIndex !== 0) {
         nearWritings.next = {
           url: sortedPosts[postIndex - 1].id,
