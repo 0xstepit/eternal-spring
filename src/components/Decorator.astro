@@ -1,0 +1,12 @@
+---
+interface Props {
+  symbol: string;
+  count?: number;
+}
+
+const { symbol, count = 3 } = Astro.props;
+---
+
+<div class="decorator" aria-hidden="true">
+  {Array.from({ length: count }).map(() => <span>{symbol}</span>)}
+</div>

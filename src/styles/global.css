@@ -33,6 +33,15 @@ main ol {
   list-style: decimal;
 }
 
+main li:not(.tag-container) {
+  margin-bottom: var(--spacing-half);
+  line-height: var(--line-height-base);
+}
+
+main li:not(.tag-container):last-child {
+  margin-bottom: 0;
+}
+
 li::marker {
   color: var(--color-dark-grey);
 }
@@ -56,7 +65,7 @@ h5 {
 
 p {
   text-align: justify;
-  margin-bottom: calc(1 * var(--spacing-unit));
+  margin-bottom: var(--spacing-unit);
 }
 
 /* Used to set the white page on top of
@@ -167,18 +176,24 @@ main {
 }
 
 .neighbor-writing-left {
-  display: flex;
   justify-content: flex-start;
-  align-items: center;
   text-align: left;
+}
+
+.neighbor-writing-left a {
+  display: flex;
+  align-items: center;
   gap: var(--spacing-unit);
 }
 
 .neighbor-writing-right {
-  display: flex;
   justify-content: flex-end;
-  align-items: center;
   text-align: right;
+}
+
+.neighbor-writing-right a {
+  display: flex;
+  align-items: center;
   gap: var(--spacing-unit);
 }
 
@@ -201,13 +216,15 @@ main {
 }
 
 .tag-container {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   background: var(--color-light-grey);
   border: var(--border-size) solid var(--color-grey);
-  padding: 0 var(--spacing-small);
+  padding: var(--spacing-quarter) var(--spacing-small);
   border-radius: 3px;
+  line-height: 1;
+  height: 1.5rem;
 }
 
 .tag-text::before {
@@ -416,7 +433,7 @@ code {
 
 @media (max-width: 700px) {
   :root {
-    line-height: 1.7rem;
+    --line-height-base: 1.6;
   }
 
   .header-container {

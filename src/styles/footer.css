@@ -7,6 +7,10 @@ footer {
   height: 100%;
   color: var(--color-background);
   background: var(--color-text);
+  /* Slightly increase weight for light-on-dark readability */
+  --wght-v: "wght" 420;
+  font-variation-settings:
+    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
 }
 
 .footer-container {

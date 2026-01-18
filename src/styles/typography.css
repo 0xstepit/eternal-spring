@@ -3,9 +3,9 @@
 :root {
   /* Typography */
   --font-sans: "Recursive", monospace;
-  --font-size: 1.125rem; /* used by the rem ---> not working*/
+  --font-size-base: 1rem;
   --casl: "casl" 0;
-  --wght: "wght" 300;
+  --wght: "wght" 400; /* 400 is standard for body text readability */
   --slnt: "slnt" 0;
   --mono: "MONO" 1;
   --CRSV: "CRSV" 0;
@@ -44,7 +44,7 @@ strong,
 }
 
 .thin {
-  --wght-v: "wght" 300;
+  --wght-v: "wght" 350;
   font-variation-settings:
     var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
 }
@@ -62,26 +62,35 @@ h5,
 }
 
 p {
-  --wght-v: "wght" 300;
+  --wght-v: "wght" 400;
   font-variation-settings:
     var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
 }
 
+/* Heading scale using ~1.2 ratio for visual harmony */
 h1 {
   font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.65rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+h5 {
+  font-size: 1rem;
 }
 
 .smaller,
 .figure-caption {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
 
 .spacer {
@@ -93,7 +102,7 @@ a {
 }
 
 code span {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
 }
 
 .katex .text {

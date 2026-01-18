@@ -9,12 +9,11 @@ const { neighbors } = Astro.props;
 ---
 
 <nav class="neighbor-writing-container" aria-label="Post navigation">
-  <div class="neighbor-writing">
+  <div class="neighbor-writing neighbor-writing-left">
     {
       neighbors.previous && (
         <a
           href={`/writings/${neighbors.previous?.url}`}
-          class="neighbor-writing-left"
           aria-label={`Previous post: ${neighbors.previous?.title}`}
         >
           <img
@@ -28,12 +27,11 @@ const { neighbors } = Astro.props;
       )
     }
   </div>
-  <div class="neighbor-writing">
+  <div class="neighbor-writing neighbor-writing-right">
     {
       neighbors.next && (
         <a
           href={`/writings/${neighbors.next?.url}`}
-          class="neighbor-writing-right"
           aria-label={`Next post: ${neighbors.next?.title}`}
         >
           <span>{neighbors.next?.title}</span>
