@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Decorator from "../../components/Decorator.astro";
 
 import { SITE_CONFIG } from "@/config";
 
@@ -73,11 +74,7 @@ const neighbors = await getWritingNeighbors(post.id);
       {post.data.summary && <p class="article-summary">{post.data.summary}</p>}
     </div>
 
-    <div class="decorator">
-      <span>~</span>
-      <span>~</span>
-      <span>~</span>
-    </div>
+    <Decorator symbol="~" />
 
     <div class="article-content">
       <Content />

@@ -13,14 +13,15 @@ const { links } = Astro.props;
     links.map((link) => {
       return (
         <div class="footer-link principal-link">
-          <a href={link.url}>
+          <a href={link.url} aria-label={`Visit ${link.platform}`}>
             {link.platform}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width=1rem
-              height=1rem
-				      viewBox="0 0 16 16"
+              width="1rem"
+              height="1rem"
+              viewBox="0 0 16 16"
               fill="currentColor"
+              aria-hidden="true"
             >
               <path d={link.svg} />
             </svg>

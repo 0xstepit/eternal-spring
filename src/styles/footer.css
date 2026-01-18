@@ -31,8 +31,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 calc(1 * var(--spacing-unit));
-  gap: 1rem;
+  padding: 0 var(--spacing-unit);
+  gap: var(--spacing-unit);
   color: var(--color-background);
 }
 

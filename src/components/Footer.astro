@@ -1,16 +1,20 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
 import { SOCIAL_LINKS } from "@/config";
+
+const currentYear = new Date().getFullYear();
 ---
 
-<div class="footer-container">
-  <SocialLinks links={SOCIAL_LINKS} />
-  <div class="footer-gpg bold">
-    <a href="/public/pubkey.asc" download="stepit_pubkey.asc">pubkey.asc</a>
+<footer>
+  <div class="footer-container">
+    <SocialLinks links={SOCIAL_LINKS} />
+    <div class="footer-gpg bold">
+      <a href="/public/pubkey.asc" download="stepit_pubkey.asc">pubkey.asc</a>
+    </div>
+    <div class="footer-copyright">
+      <span class="spacer footer-spacer footer-spacer--left" aria-hidden="true">×</span>
+      <span class="copyright bold">Copyright © {currentYear} Stefano Pitton</span>
+      <span class="spacer footer-spacer footer-spacer--right" aria-hidden="true">*</span>
+    </div>
   </div>
-  <div class="footer-copyright">
-    <div class="spacer footer-spacer footer-spacer--left">×</div>
-    <div class="copyright bold">Copyright © 2026 Stefano Pitton</div>
-    <div class="spacer footer-spacer footer-spacer--right">*</div>
-  </div>
-</div>
+</footer>

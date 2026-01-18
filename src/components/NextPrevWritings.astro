@@ -8,37 +8,43 @@ interface Props {
 const { neighbors } = Astro.props;
 ---
 
-<div class="neighbor-writing-container">
-  <div class="neighbor-writing neighbor-writing-left">
+<nav class="neighbor-writing-container" aria-label="Post navigation">
+  <div class="neighbor-writing">
     {
       neighbors.previous && (
-        <a href={`/writings/${neighbors.previous?.url}`}>
-          <div class="neighbor-writing-left">
-            <img
-              src="/icons/larrow.svg"
-              alt="Previous post"
-              class="nav-icon"
-            />
-            <span>{neighbors.previous?.title}</span>
-          </div>
+        <a
+          href={`/writings/${neighbors.previous?.url}`}
+          class="neighbor-writing-left"
+          aria-label={`Previous post: ${neighbors.previous?.title}`}
+        >
+          <img
+            src="/icons/larrow.svg"
+            alt=""
+            class="nav-icon"
+            aria-hidden="true"
+          />
+          <span>{neighbors.previous?.title}</span>
         </a>
       )
     }
   </div>
-  <div class="neighbor-writing neighbor-writing-right">
+  <div class="neighbor-writing">
     {
       neighbors.next && (
-        <a href={`/writings/${neighbors.next?.url}`}>
-          <div class="neighbor-writing-right">
-            <span>{neighbors.next?.title}</span>
-            <img
-              src="/icons/rarrow.svg"
-              alt="Next post"
-              class="nav-icon"
-            />
-          </div>
+        <a
+          href={`/writings/${neighbors.next?.url}`}
+          class="neighbor-writing-right"
+          aria-label={`Next post: ${neighbors.next?.title}`}
+        >
+          <span>{neighbors.next?.title}</span>
+          <img
+            src="/icons/rarrow.svg"
+            alt=""
+            class="nav-icon"
+            aria-hidden="true"
+          />
         </a>
       )
     }
   </div>
-</div>
+</nav>

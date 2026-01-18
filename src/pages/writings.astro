@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Base from "../layouts/Base.astro";
 import PostCardOneline from "../components/PostCardOneline.astro";
+import Decorator from "../components/Decorator.astro";
 
 import {
   sortByDate,
@@ -26,11 +27,7 @@ const pageTitle = "Blog";
   <div class="writings-container">
     <h1>All writings</h1>
 
-    <div class="decorator">
-      <span>+</span>
-      <span>+</span>
-      <span>+</span>
-    </div>
+    <Decorator symbol="+" />
 
     <p>All the writings divided by year.</p>
 

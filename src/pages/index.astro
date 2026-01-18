@@ -4,6 +4,7 @@ import IndexImage from "../images/lisbon.jpg";
 
 import { SITE_CONFIG } from "@/config";
 import Base from "../layouts/Base.astro";
+import Decorator from "../components/Decorator.astro";
 
 const pageTitle = SITE_CONFIG.title;
 ---
@@ -11,11 +12,7 @@ const pageTitle = SITE_CONFIG.title;
 <Base pageTitle={pageTitle}>
   <h1>Welcome to Eternal Spring.</h1>
 
-  <div class="decorator">
-    <span>×</span>
-    <span>×</span>
-    <span>×</span>
-  </div>
+  <Decorator symbol="×" />
 
   <figure class="figure">
     <div class="figure-container">
