@@ -1,5 +1,4 @@
 ---
-// Component Script (JavaScript)
 interface Props {
   name: string;
   path: string;
@@ -10,9 +9,7 @@ name = name.toLocaleLowerCase().split(" ").join("-");
 ---
 
 <div class="navigation-logo">
-  <span class="span-logo">
-    <a href={path} class="logo-link" }>
-      ~/.{name}
-    </a>
-  </span>
+  <a href={path} class="logo-link">
+    ~/.{name}
+  </a>
 </div>

@@ -14,6 +14,7 @@ header {
   align-items: center;
 
   background-color: var(--color-background);
+  font-family: var(--font-main);
 }
 
 .navigation {
@@ -48,14 +49,12 @@ header {
   text-decoration: none;
 }
 
-.span-logo {
-  background: var(--color-background-logo);
-  padding: calc(0.5 * var(--spacing-unit));
-}
-
 .logo-link {
-  color: var(--color-text-logo);
+  color: var(--color-background);
+  background-color: var(--color-text);
   text-decoration: none;
+  letter-spacing: 0.05em;
+  padding: var(--spacing-quarter) var(--spacing-half);
 }
 
 .navigation-list {

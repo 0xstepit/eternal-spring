@@ -1,18 +1,18 @@
 :root {
-  /* Colors */
-  --color-white: hsl(0, 0%, 99%);
-  --color-black: hsl(0, 0%, 10%);
-  --color-cyan: hsl(165 75% 50%);
-  --color-light-grey: hsl(0 0% 96%);
-  --color-grey: hsl(0 0% 85%);
-  --color-dark-grey: hsl(0 0% 58%);
+  /* Colors - Japanese minimalist palette */
+  --color-white: hsl(40, 10%, 98%);
+  --color-black: hsl(220, 15%, 13%);
+  --color-cyan: hsl(165, 75%, 50%);
+  --color-light-grey: hsl(220, 5%, 94%);
+  --color-grey: hsl(220, 5%, 78%);
+  --color-dark-grey: hsl(220, 5%, 45%);
 
   /* Abstraction */
   --color-text: var(--color-black);
   --color-background: var(--color-white);
   --color-accent: var(--color-cyan);
-  --color-text-logo: var(--color-background);
-  --color-background-logo: var(--color-text);
+  --color-text-logo: var(--color-text);
+  --color-background-logo: transparent;
   --color-link: var(--color-text);
   --color-link-visited: var(--color-accent);
 

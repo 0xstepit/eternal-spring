@@ -1,14 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=M+PLUS+1p:wght@100;300;400;500;700&display=swap");
 
 :root {
   /* Typography */
-  --font-sans: "Recursive", monospace;
+  --font-main: "M PLUS 1p", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
   --font-size-base: 1rem;
-  --casl: "casl" 0;
-  --wght: "wght" 400; /* 400 is standard for body text readability */
-  --slnt: "slnt" 0;
-  --mono: "MONO" 1;
-  --CRSV: "CRSV" 0;
 }
 
 html {
@@ -16,37 +12,24 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  --mono-v: var(--mono);
-  --casl-v: var(--casl);
-  --wght-v: var(--wght);
-  --slnt-v: var(--slnt);
-  --crsv-v: var(--CRSV);
-
-  font-variation-settings:
-    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+  font-family: var(--font-main);
+  font-weight: 300;
 }
 
 em,
 .italic,
 .figure-caption {
-  --slnt-v: "slnt" -15;
-  font-variation-settings:
-    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+  font-style: italic;
 }
 
 strong,
 .principal-link,
 .bold {
-  --wght-v: "wght" 500;
-  font-variation-settings:
-    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+  font-weight: 600;
 }
 
 .thin {
-  --wght-v: "wght" 350;
-  font-variation-settings:
-    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+  font-weight: 300;
 }
 
 h1,
@@ -56,15 +39,12 @@ h4,
 h5,
 .post-link,
 .navigation-logo {
-  --wght-v: "wght" 700;
-  font-variation-settings:
-    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 p {
-  --wght-v: "wght" 400;
-  font-variation-settings:
-    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+  font-weight: 300;
 }
 
 /* Heading scale using ~1.2 ratio for visual harmony */
@@ -94,7 +74,7 @@ h5 {
 }
 
 .spacer {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 a {
@@ -106,7 +86,7 @@ code span {
 }
 
 .katex .text {
-  font-family: "Recursive", monospace;
+  font-family: var(--font-main);
   font-size: 1rem;
 }
 

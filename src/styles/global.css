@@ -232,20 +232,13 @@ main {
   margin-right: 0.1rem;
 }
 
-.index-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 /* Links */
 a {
   overflow-x: auto;
   color: var(--color-text);
   text-decoration: underline;
   text-underline-offset: 0.2rem;
-  text-decoration-thickness: calc(20 * var(--border-size));
+  text-decoration-thickness: 2px;
   text-decoration-color: var(--color-accent);
   transition: color 0.2s ease;
 }
@@ -260,6 +253,7 @@ a {
 }
 
 .figure-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -293,6 +287,7 @@ a {
   padding: var(--spacing-unit);
   border: var(--border-size) solid var(--color-grey);
   line-height: var(--line-height-code);
+  font-family: var(--font-mono);
 }
 
 .group-writings {
@@ -308,6 +303,7 @@ pre {
   padding: var(--spacing-unit) 0;
   background-color: var(--color-light-grey);
   border: var(--border-size) solid var(--color-grey);
+  font-family: var(--font-mono);
 }
 
 pre [data-line] {
@@ -367,8 +363,9 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   text-align: center;
   color: var(--color-dark-grey);
   justify-content: center;
-  gap: calc(1 * var(--spacing-unit));
-  margin-bottom: calc(2 * var(--spacing-unit));
+  gap: var(--spacing-unit);
+  margin-bottom: var(--spacing-double);
+  font-size: 1rem;
 }
 
 ul,
@@ -398,19 +395,41 @@ code {
   background-color: var(--color-light-grey);
   padding: var(--spacing-small);
   border-radius: 3px;
+  font-family: var(--font-mono);
 }
 
+/* Inline math */
 .katex {
   background-color: var(--color-light-grey);
   padding: 0 var(--spacing-small);
   border-radius: 3px;
+}
+
+/* Display math - paragraph containing only katex */
+p:has(> .katex:only-child) {
+  background-color: var(--color-light-grey);
+  padding: var(--spacing-unit);
+  border-radius: 3px;
   overflow-x: auto;
+  max-width: 100%;
+}
+
+p:has(> .katex:only-child) > .katex {
+  background-color: transparent;
+  padding: 0;
 }
 
 .katex-display {
   background-color: var(--color-light-grey);
   padding: var(--spacing-unit);
   border-radius: 3px;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.katex-display > .katex {
+  background-color: transparent;
+  padding: 0;
 }
 
 :is(.about-body, .article-meta, .article-content, .article-footer)

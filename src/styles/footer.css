@@ -4,40 +4,43 @@
 
 footer {
   width: 100%;
-  height: 100%;
-  color: var(--color-background);
-  background: var(--color-text);
-  /* Slightly increase weight for light-on-dark readability */
-  --wght-v: "wght" 420;
-  font-variation-settings:
-    var(--mono-v), var(--casl-v), var(--wght-v), var(--slnt-v), var(--crsv-v);
+  color: var(--color-dark-grey);
+  background: var(--color-background);
+  font-family: var(--font-main);
+  font-weight: 400;
 }
 
 .footer-container {
   width: min(100%, var(--content-max-width));
-  padding: calc(3 * var(--spacing-unit)) calc(1 * var(--spacing-unit));
+  padding: var(--spacing-double) var(--spacing-unit);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-unit);
+  border-top: var(--border-size) solid var(--color-text);
 }
 
 .footer-links {
   display: flex;
-  flex-basis: auto;
   flex-wrap: wrap;
-  flex-grow: 1;
   justify-content: center;
-  margin-bottom: calc(1 * var(--spacing-unit));
+  gap: var(--spacing-half);
 }
 
 .footer-link a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 var(--spacing-unit);
-  gap: var(--spacing-unit);
-  color: var(--color-background);
+  padding: 0 var(--spacing-half);
+  gap: var(--spacing-half);
+  color: var(--color-dark-grey);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link a:hover {
+  color: var(--color-text);
 }
 
 .footer-gpg {
@@ -47,31 +50,21 @@ footer {
 }
 
 .footer-gpg a {
-  color: var(--color-background);
+  color: var(--color-dark-grey);
+}
+
+.footer-gpg a:hover {
+  color: var(--color-text);
 }
 
 .footer-copyright {
-  margin-top: calc(2 * var(--spacing-unit));
+  margin-top: var(--spacing-unit);
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .copyright {
-  flex-basis: 0;
-  flex-grow: 2;
   text-align: center;
-}
-
-.footer-spacer {
-  flex-basis: 0;
-  flex-grow: 1;
-}
-
-.footer-spacer--left {
-  text-align: left;
-}
-
-.footer-spacer--right {
-  text-align: right;
 }
