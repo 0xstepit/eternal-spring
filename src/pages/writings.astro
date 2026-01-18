@@ -3,13 +3,15 @@ import "../styles/global.css";
 import Base from "../layouts/Base.astro";
 import PostCardOneline from "../components/PostCardOneline.astro";
 
-import { sortByDate, groupByYear } from "../scripts/writings.ts";
+import {
+  sortByDate,
+  groupByYear,
+  writingCollectionFilter,
+} from "../scripts/writings.ts";
 import type { WritingEntry } from "../types.ts";
 
 import { getCollection } from "astro:content";
-const allPosts = await getCollection("writings", ({ data }) => {
-  return data["to-publish"] === true;
-});
+const allPosts = await getCollection("writings", writingCollectionFilter);
 
 const sortedPosts: WritingEntry[] = sortByDate({
   posts: allPosts,
@@ -30,7 +32,7 @@ const pageTitle = "Blog";
       <span>+</span>
     </div>
 
-    <p>All the wriitings divided by year.</p>
+    <p>All the writings divided by year.</p>
 
     <ul class="post-cards">
       {

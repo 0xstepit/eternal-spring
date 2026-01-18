@@ -1,1 +1,48 @@
-<h1>Well, it seems we have an error</h1>
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base pageTitle="Page Not Found" pageStyle="clean">
+  <div class="error-container">
+    <h1>404</h1>
+    <p>The page you're looking for doesn't exist.</p>
+
+    <div class="error-links">
+      <a href="/">Go home</a>
+      <span>or</span>
+      <a href="/writings">Browse writings</a>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50vh;
+    gap: 1rem;
+  }
+
+  .error-container h1 {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  .error-container p {
+    color: var(--color-grey);
+    margin: 0;
+  }
+
+  .error-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .error-links span {
+    color: var(--color-grey);
+  }
+</style>
