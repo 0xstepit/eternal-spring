@@ -21,7 +21,7 @@ body {
 }
 
 body {
-  background-color: var(--color-accent);
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
 }
@@ -217,7 +217,8 @@ main {
 
 .post-tags {
   display: flex;
-  padding: 0;
+  justify-content: center;
+  padding: var(--spacing-unit) 0 0 0;
   margin: 0;
   gap: var(--spacing-half);
 }
@@ -231,7 +232,8 @@ main {
   padding: var(--spacing-quarter) var(--spacing-small);
   border-radius: 3px;
   line-height: 1;
-  height: 1.5rem;
+  height: 1.25rem;
+  font-size: 0.8rem;
 }
 
 .tag-text::before {
@@ -245,7 +247,7 @@ a {
   color: var(--color-text);
   text-decoration: underline;
   text-underline-offset: 0.2rem;
-  text-decoration-thickness: 1.5px;
+  text-decoration-thickness: 2px;
   text-decoration-color: var(--color-accent);
   transition: color 0.2s ease;
 }
@@ -411,8 +413,8 @@ code {
   border-radius: 3px;
 }
 
-/* Display math - paragraph containing only katex */
-p:has(> .katex:only-child) {
+/* Display math - paragraph containing only katex (no text nodes) */
+p:has(> .katex-display:only-child) {
   background-color: var(--color-light-grey);
   padding: var(--spacing-unit);
   border-radius: 3px;
@@ -420,7 +422,7 @@ p:has(> .katex:only-child) {
   max-width: 100%;
 }
 
-p:has(> .katex:only-child) > .katex {
+p:has(> .katex-display:only-child) > .katex-display {
   background-color: transparent;
   padding: 0;
 }
@@ -454,6 +456,16 @@ p:has(> .katex:only-child) > .katex {
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E");
   mask-repeat: no-repeat;
   mask-size: contain;
+}
+
+@media (orienntation: landspace) and (max-width: 700px) {
+  :root {
+    --line-height-base: 1.6;
+  }
+
+  main {
+    padding: calc(3 * var(--spacing-unit)) calc(5 * var(--spacing-unit));
+  }
 }
 
 @media (max-width: 700px) {
