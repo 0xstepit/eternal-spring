@@ -17,6 +17,7 @@ html,
 body {
   width: 100%;
   min-height: 100vh;
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -65,6 +66,12 @@ h5 {
 
 p {
   text-align: justify;
+  margin-bottom: var(--spacing-unit);
+}
+
+body-container table,
+body-container ul,
+body-container ol {
   margin-bottom: var(--spacing-unit);
 }
 
@@ -295,7 +302,7 @@ a {
 }
 
 code span {
-  line-height: 1;
+  line-height: 1.5;
 }
 
 pre {
@@ -304,6 +311,7 @@ pre {
   background-color: var(--color-light-grey);
   border: var(--border-size) solid var(--color-grey);
   font-family: var(--font-mono);
+  border-radius: 3px;
 }
 
 pre [data-line] {
@@ -332,7 +340,7 @@ code > [data-line]::before {
   width: 0.75rem;
   margin-right: 2rem;
   text-align: right;
-  color: gray;
+  color: var(--color-grey);
 }
 
 code[data-line-numbers-max-digits="2"] > [data-line]::before {
@@ -345,17 +353,6 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 
 code[data-line-numbers-max-digits="4"] > [data-line]::before {
   width: 2.25rem;
-}
-
-.rehype-pretty-copy {
-  background-color: transparent;
-  border: 0px solid var(--color-text);
-}
-
-.rehype-pretty-copy.rehype-pretty-copied {
-  background-color: transparent;
-  color: red;
-  border: 0px solid var(--color-text);
 }
 
 .decorator {
@@ -389,6 +386,15 @@ ol {
 
 .definition-type {
   color: var(--color-dark-grey);
+}
+
+.definition ol,
+.definition ul {
+  overflow-x: visible;
+}
+
+.definition li p {
+  margin-bottom: 0;
 }
 
 code {
@@ -465,12 +471,6 @@ p:has(> .katex:only-child) > .katex {
     gap: var(--spacing-unit);
     height: 100%;
   }
-
-  /* .footer-links { */
-  /*   flex-direction: column; */
-  /*   justify-content: center; */
-  /*   align-items: center; */
-  /* } */
 
   .logo-container {
     flex-grow: 1;

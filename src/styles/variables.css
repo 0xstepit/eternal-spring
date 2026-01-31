@@ -2,7 +2,7 @@
   /* Colors - Japanese minimalist palette */
   --color-white: hsl(40, 10%, 98%);
   --color-black: hsl(220, 15%, 13%);
-  --color-cyan: hsl(165, 75%, 50%);
+  --color-cyan: hsl(205 100%, 50%);
   --color-light-grey: hsl(220, 5%, 94%);
   --color-grey: hsl(220, 5%, 78%);
   --color-dark-grey: hsl(220, 5%, 45%);
@@ -24,7 +24,7 @@
   --spacing-quarter: calc(0.25 * var(--spacing-unit));
   --spacing-double: calc(2 * var(--spacing-unit));
   --spacing-triple: calc(3 * var(--spacing-unit));
-  --border-size: 0.1px;
+  --border-size: 0.5px;
   --header-height: 70px;
 
   /* Typography */

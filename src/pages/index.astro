@@ -8,7 +8,7 @@ import Base from "../layouts/Base.astro";
 const pageTitle = SITE_CONFIG.title;
 ---
 
-<Base pageTitle={pageTitle}>
+<Base pageTitle={pageTitle} pageStyle="clean">
   <h1>Welcome to Eternal Spring.</h1>
 
   <div class="decorator">
@@ -16,6 +16,8 @@ const pageTitle = SITE_CONFIG.title;
     <span>×</span>
     <span>×</span>
   </div>
+
+  <p>Random notes of a curious engineer.</p>
 
   <figure class="figure">
     <div class="figure-container">

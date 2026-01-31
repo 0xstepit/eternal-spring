@@ -3,7 +3,7 @@ author: stepit
 title: "Rediscovering mathematics with abstract algebra"
 slug: "rediscovering-mathematics-with-abstract-algebra"
 created: 2025-12-23
-modified: 2025-12-23
+modified: 2026-01-18
 summary: ""
 category: ""
 tags: [math, cryptography]
@@ -68,9 +68,7 @@ elements from the set, and returns another element from it. The map is called
 **group law**, and must satisfy the following requirements:
 
 1. Associativity: $\forall a,b, c \in \mathbb{G}$ the equation $a \cdot(b \cdot c) = (a \cdot b) \cdot c)$ holds.
-
 2. Existence of the neutral element: $\exists e \in \mathbb{G} : eg = g, \, \forall g \in \mathbb{G}$.
-
 3. Existence of the inverse element: $\exists g^{-1} \in \mathbb{G} :  gg^{-1} = e, \, \forall g \in \mathbb{G}$.
 </div>
 
@@ -86,18 +84,10 @@ map $\cdot: \mathbb{G} \times \mathbb{G} \rightarrow \mathbb{G}$ which takes two
 elements from the set, and returns another element from it. The map is called
 **group law**, and must satisfy the following requirements:
 
-1. Commutativity: $\forall a,b \in \mathbb{G}$ the equation
-   $a \cdot b = b \cdot a$ holds.
-
-1. Associativity: $\forall a,b, c \in \mathbb{G}$ the equation
-   $a \cdot(b \cdot c) = (a \cdot b) \cdot c)$ holds.
-
-1. Existence of the neutral element:
-   $\exists e \in \mathbb{G} : eg = g, \, \forall g \in \mathbb{G}$.
-
-1. Existence of the inverse element:
-   $\exists g^{-1} \in \mathbb{G} :  gg^{-1} = e, \, \forall g \in \mathbb{G}$.
-
+1. Commutativity: $\forall a,b \in \mathbb{G}$ the equation $a \cdot b = b \cdot a$ holds.
+2. Associativity: $\forall a,b, c \in \mathbb{G}$ the equation $a \cdot(b \cdot c) = (a \cdot b) \cdot c)$ holds.
+3. Existence of the neutral element: $\exists e \in \mathbb{G} : eg = g, \, \forall g \in \mathbb{G}$.
+4. Existence of the inverse element: $\exists g^{-1} \in \mathbb{G} :  gg^{-1} = e, \, \forall g \in \mathbb{G}$.
 </div>
 
 Abelian groups are most commonly called **commutative groups**. Based on the
