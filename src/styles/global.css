@@ -245,7 +245,7 @@ a {
   color: var(--color-text);
   text-decoration: underline;
   text-underline-offset: 0.2rem;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1.5px;
   text-decoration-color: var(--color-accent);
   transition: color 0.2s ease;
 }
@@ -488,6 +488,10 @@ p:has(> .katex:only-child) > .katex {
   .navigation-spacer,
   .footer-spacer {
     display: none;
+  }
+
+  .footer-copyright {
+    justify-content: center;
   }
 
   .navigation-logo {
