@@ -279,13 +279,14 @@ main {
 
 /* Links */
 a {
-  overflow-x: auto;
   color: var(--color-text);
   text-decoration: underline;
-  text-underline-offset: 0.2rem;
+  text-underline-offset: 0.3rem;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--color-accent);
+  text-decoration-skip-ink: none;
   transition: color 0.2s ease;
+  padding-bottom: 0.1rem;
 }
 
 /* OTHER */
