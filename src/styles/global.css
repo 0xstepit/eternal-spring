@@ -75,6 +75,42 @@ body-container ol {
   margin-bottom: var(--spacing-unit);
 }
 
+/* Tables */
+table {
+  width: max-content;
+  max-width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+thead {
+  background-color: var(--color-light-grey);
+  border-top: var(--border-size) solid var(--color-grey);
+  border-bottom: var(--border-size) solid var(--color-grey);
+}
+
+th,
+td {
+  padding: var(--spacing-half) var(--spacing-unit);
+  text-align: left;
+  border-bottom: var(--border-size) solid var(--color-grey);
+  white-space: nowrap;
+}
+
+th {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+tbody tr:hover {
+  background-color: var(--color-light-grey);
+}
+
+tbody tr:last-child td {
+  border-bottom: var(--border-size) solid var(--color-grey);
+}
+
 /* Used to set the white page on top of
  * the accented body color. This way, we will see the accented
  * color only when scrolling at the edges. */
@@ -365,6 +401,11 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   gap: var(--spacing-unit);
   margin-bottom: var(--spacing-double);
   font-size: 1rem;
+}
+
+table {
+  padding-bottom: calc(1 * var(--spacing-unit));
+  overflow-x: auto;
 }
 
 ul,
