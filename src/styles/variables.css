@@ -3,9 +3,11 @@
   --color-white: hsl(40, 10%, 98%);
   --color-black: hsl(220, 15%, 13%);
   --color-cyan: hsl(205, 100%, 50%);
+  --color-lighter-grey: hsl(220, 5%, 97%);
   --color-light-grey: hsl(220, 5%, 94%);
   --color-grey: hsl(220, 5%, 78%);
   --color-dark-grey: hsl(220, 5%, 45%);
+  --color-accent-faint: hsla(205, 100%, 50%, 0.08);
 
   /* Abstraction */
   --color-text: var(--color-black);

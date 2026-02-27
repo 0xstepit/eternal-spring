@@ -23,3 +23,28 @@ ul,
 ol {
   list-style: none;
 }
+
+/* Minimal scrollbar for overflow elements */
+pre,
+table,
+.katex-display,
+p:has(> .katex-display:only-child) {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-grey) transparent;
+}
+
+pre::-webkit-scrollbar,
+table::-webkit-scrollbar,
+.katex-display::-webkit-scrollbar,
+p:has(> .katex-display:only-child)::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+pre::-webkit-scrollbar-thumb,
+table::-webkit-scrollbar-thumb,
+.katex-display::-webkit-scrollbar-thumb,
+p:has(> .katex-display:only-child)::-webkit-scrollbar-thumb {
+  background-color: var(--color-grey);
+  border-radius: 3px;
+}

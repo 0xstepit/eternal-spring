@@ -80,8 +80,15 @@ table {
   width: max-content;
   max-width: 100%;
   border-collapse: collapse;
-  overflow-x: auto;
   display: block;
+  overflow-x: auto;
+  background-color: var(--color-background);
+}
+
+/* Make table row groups transparent so background shows through */
+thead,
+tbody {
+  background: transparent;
 }
 
 thead {
@@ -98,13 +105,19 @@ td {
   white-space: nowrap;
 }
 
+/* Cells are transparent by default to allow scroll shadows to show */
+td {
+  background-color: transparent;
+}
+
 th {
   font-weight: 600;
   color: var(--color-text);
+  background-color: var(--color-light-grey);
 }
 
-tbody tr:hover {
-  background-color: var(--color-light-grey);
+tbody tr:hover td {
+  background-color: var(--color-lighter-grey);
 }
 
 tbody tr:last-child td {
@@ -255,7 +268,7 @@ main {
   display: flex;
   justify-content: center;
   padding: var(--spacing-unit) 0 0 0;
-  margin: 0;
+  margin-bottom: var(--spacing-unit);
   gap: var(--spacing-half);
 }
 
@@ -279,14 +292,9 @@ main {
 
 /* Links */
 a {
-  color: var(--color-text);
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
-  text-decoration-thickness: 2px;
-  text-decoration-color: var(--color-accent);
-  text-decoration-skip-ink: none;
+  color: var(--color-accent);
+  text-decoration: none;
   transition: color 0.2s ease;
-  padding-bottom: 0.1rem;
 }
 
 /* OTHER */
@@ -323,6 +331,54 @@ a {
   width: 100%;
 }
 
+/* Code block with title/caption (rehype-pretty-code figure) */
+figure[data-rehype-pretty-code-figure] {
+  position: relative;
+  margin: 0 0 var(--spacing-unit) 0;
+}
+
+figcaption[data-rehype-pretty-code-title] {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-dark-grey);
+  background-color: var(--color-light-grey);
+  border: var(--border-size) solid var(--color-grey);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  padding: var(--spacing-half) var(--spacing-unit);
+}
+
+figure[data-rehype-pretty-code-figure] > pre {
+  position: static !important;
+  border-radius: 0 0 3px 3px;
+  margin-bottom: 0;
+}
+
+figcaption[data-rehype-pretty-code-caption] {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-dark-grey);
+  padding: var(--spacing-half) 0;
+  text-align: left;
+}
+
+/* Table with caption (figure wrapper convention) */
+figure.table-figure {
+  margin: 0 0 var(--spacing-unit) 0;
+}
+
+figure.table-figure > table {
+  margin-bottom: 0;
+}
+
+figure.table-figure > figcaption {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-dark-grey);
+  padding: var(--spacing-half) 0;
+  text-align: left;
+}
+
 ::selection {
   background: var(--color-accent);
   color: var(--color-text);
@@ -346,11 +402,60 @@ code span {
 
 pre {
   overflow-x: auto;
-  padding: var(--spacing-unit) 0;
-  background-color: var(--color-light-grey);
+  padding: calc(1.5 * var(--spacing-unit)) 0 var(--spacing-unit) 0;
+  margin-bottom: var(--spacing-unit);
   border: var(--border-size) solid var(--color-grey);
   font-family: var(--font-mono);
   border-radius: 3px;
+
+  background-color: var(--color-light-grey);
+}
+
+/* Language label */
+pre[data-language]::before {
+  content: attr(data-language);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-dark-grey);
+  padding: 0 var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Hide language label when title figcaption is present */
+figure[data-rehype-pretty-code-figure]:has(
+    > figcaption[data-rehype-pretty-code-title]
+  )
+  > pre[data-language]::before {
+  display: none;
+}
+
+/* Copy button - positioned relative to figure (escapes pre's overflow scroll) */
+figure[data-rehype-pretty-code-figure] button.rehype-pretty-copy {
+  top: var(--spacing-half) !important;
+  right: var(--spacing-half) !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+figure[data-rehype-pretty-code-figure]:has(
+    > figcaption[data-rehype-pretty-code-title]
+  )
+  button.rehype-pretty-copy {
+  top: var(--spacing-half) !important;
+}
+
+figure[data-rehype-pretty-code-figure]:hover button.rehype-pretty-copy {
+  opacity: 1 !important;
 }
 
 pre [data-line] {
@@ -362,8 +467,11 @@ pre > code {
 
 [data-highlighted-line] {
   display: inline-block;
-  background-color: var(--color-grey);
-  padding: var(--spacing-quarter) var(--spacing-half);
+  width: 100%;
+  background-color: var(--color-accent-faint);
+  border-left: 2px solid var(--color-accent);
+  padding: 0 var(--spacing-unit);
+  padding-left: calc(var(--spacing-unit) - 2px);
 }
 
 code[data-line-numbers] {
@@ -405,7 +513,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 }
 
 table {
-  padding-bottom: calc(1 * var(--spacing-unit));
+  margin-bottom: calc(1 * var(--spacing-unit));
   overflow-x: auto;
 }
 
@@ -425,7 +533,6 @@ ol {
 
 .definition-header {
   border-bottom: var(--border-size);
-  padding-bottom: var(--spacing-unit);
 }
 
 .definition-type {
@@ -443,9 +550,20 @@ ol {
 
 code {
   background-color: var(--color-light-grey);
-  padding: var(--spacing-small);
+  padding: 0.15em 0.35em;
   border-radius: 3px;
   font-family: var(--font-mono);
+  font-size: 0.875em;
+  border: var(--border-size) solid var(--color-grey);
+}
+
+/* Reset for code inside pre (styled by pre itself) */
+pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 /* Inline math */
@@ -470,7 +588,6 @@ p:has(> .katex-display:only-child) > .katex-display {
 }
 
 .katex-display {
-  background-color: var(--color-light-grey);
   padding: var(--spacing-unit);
   border-radius: 3px;
   overflow-x: auto;
