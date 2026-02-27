@@ -349,10 +349,11 @@ figure[data-rehype-pretty-code-figure] {
   margin: 0 0 var(--spacing-unit) 0;
 }
 
-figcaption[data-rehype-pretty-code-title] {
+[data-rehype-pretty-code-title] {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--color-dark-grey);
+  font-weight: 500;
+  color: var(--color-text);
   background-color: var(--color-light-grey);
   border: var(--border-size) solid var(--color-grey);
   border-bottom: none;
@@ -362,8 +363,15 @@ figcaption[data-rehype-pretty-code-title] {
 
 figure[data-rehype-pretty-code-figure] > pre {
   position: static !important;
-  border-radius: 0 0 3px 3px;
   margin-bottom: 0;
+}
+
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
+  > pre {
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  margin-top: -1px;
+  padding-top: var(--spacing-half);
 }
 
 figcaption[data-rehype-pretty-code-caption] {
@@ -414,7 +422,7 @@ code span {
 
 pre {
   overflow-x: auto;
-  padding: calc(1.5 * var(--spacing-unit)) 0 var(--spacing-unit) 0;
+  padding: var(--spacing-half) 0 var(--spacing-unit) 0;
   margin-bottom: var(--spacing-unit);
   border: var(--border-size) solid var(--color-grey);
   font-family: var(--font-mono);
@@ -431,7 +439,7 @@ pre[data-language]::before {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-dark-grey);
+  color: var(--color-grey);
   padding: 0 var(--spacing-unit);
   margin-bottom: var(--spacing-unit);
   line-height: 1;
@@ -440,9 +448,7 @@ pre[data-language]::before {
 }
 
 /* Hide language label when title figcaption is present */
-figure[data-rehype-pretty-code-figure]:has(
-    > figcaption[data-rehype-pretty-code-title]
-  )
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
   > pre[data-language]::before {
   display: none;
 }
@@ -459,9 +465,7 @@ figure[data-rehype-pretty-code-figure] button.rehype-pretty-copy {
   z-index: 2;
 }
 
-figure[data-rehype-pretty-code-figure]:has(
-    > figcaption[data-rehype-pretty-code-title]
-  )
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
   button.rehype-pretty-copy {
   top: var(--spacing-half) !important;
 }
@@ -521,7 +525,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   justify-content: center;
   gap: var(--spacing-unit);
   margin-bottom: var(--spacing-double);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 table {

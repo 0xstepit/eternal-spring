@@ -26,7 +26,7 @@
   --spacing-quarter: calc(0.25 * var(--spacing-unit));
   --spacing-double: calc(2 * var(--spacing-unit));
   --spacing-triple: calc(3 * var(--spacing-unit));
-  --border-size: 0.5px;
+  --border-size: 1px;
   --header-height: 70px;
 
   /* Typography */

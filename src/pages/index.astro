@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import IndexImage from "../images/lisbon.jpg";
+import Decorator from "../components/Decorator.astro";
 
 import { SITE_CONFIG } from "@/config";
 import Base from "../layouts/Base.astro";
@@ -11,11 +12,7 @@ const pageTitle = SITE_CONFIG.title;
 <Base pageTitle={pageTitle} pageStyle="clean">
   <h1>Welcome to Eternal Spring.</h1>
 
-  <div class="decorator">
-    <span>×</span>
-    <span>×</span>
-    <span>×</span>
-  </div>
+  <Decorator symbol="×" />
 
   <p>Random notes of a curious engineer.</p>
 

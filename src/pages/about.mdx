@@ -5,15 +5,14 @@ layout: ../layouts/Base.astro
 
 import Base from "../layouts/Base.astro";
 
+import Decorator from "../components/Decorator.astro";
 import { Image } from "astro:assets";
 
 import AboutImage from "../images/me-and-topolino.jpg";
 
 <h1>About</h1>
 
-<div class="decorator">
-  <span>{'/ / /'}</span>
-</div>
+<Decorator symbol="*" />
 <div class="about-body">
 	__Eternal Spring__ is a blog about the _random things_ I learn and experiment 
 	with related to mathematics and cryptography.
@@ -39,7 +38,7 @@ import AboutImage from "../images/me-and-topolino.jpg";
 		</div>
 	</figure>
 
-	In my carreer I contributed to the development of multiple components of a blockchain system. At
+	In my career I contributed to the development of multiple components of a blockchain system. At
     [Noble](https://github.com/noble-assets/noble) I helped shaping the infrastructure for
 	world payments. I've contributed to a stablecoincoins automate-market maker (AMM) based on the
 	stableswap invariant, and designed an abstraction layer for automated cross-chain routing on top
