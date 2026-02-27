@@ -29,9 +29,21 @@ body {
 main ul {
   list-style: disc;
 }
+main ul ul {
+  list-style: circle;
+}
+main ul ul ul {
+  list-style: square;
+}
 
 main ol {
   list-style: decimal;
+}
+main ol ol {
+  list-style: lower-alpha;
+}
+main ol ol ol {
+  list-style: lower-roman;
 }
 
 main li:not(.tag-container) {
