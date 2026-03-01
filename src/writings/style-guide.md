@@ -203,10 +203,10 @@ Wrap a table in a `<figure>` with a `<figcaption>` to add a caption:
 
 ## Definition Boxes
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Def]</strong>
-    <strong class="definition-title">Group</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Def]</strong>
+    <strong class="callout-title">Group</strong>
   </div>
   <p>A <strong>group</strong> is a set G equipped with a binary operation * such that:</p>
   <ol>

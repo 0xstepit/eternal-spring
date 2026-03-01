@@ -56,10 +56,10 @@ mathematical phenomena. We say abstraction because the theory here described is
 not applicable to only numbers, but also to geometric shapes, polynomials, and
 many other entities.
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Def]</strong>
-    <strong class="definition-title">Group</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Def]</strong>
+    <strong class="callout-title">Group</strong>
   </div>
 
 A group $(\mathbb{G}, \star)$ is defined as a set $\mathbb{G)}$ and a binary
@@ -76,9 +76,11 @@ Points 1. to 3. are called **axioms** of the group. This is definition of group
 is the most general, but we will be mainly interested in a particular type of
 group in which the order of application of the group law to two group element is not important:
 
-<div class="definition">
-<strong class="definition-title">[Def] Abelian Group</strong>
-
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Definition]</strong>
+    <strong class="callout-title">Abelian Group</strong>
+  </div>
 A group $(\mathbb{G}, \cdot)$ is defined as a set $\mathbb{G)}$ and a binary
 map $\cdot: \mathbb{G} \times \mathbb{G} \rightarrow \mathbb{G}$ which takes two
 elements from the set, and returns another element from it. The map is called

@@ -16,10 +16,10 @@ to-publish: true
 Fields are an important concept for understanding crypto systems which generalizes the concept
 of arithmetic on rational numbers we are used to work with.
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Def]</strong>
-    <strong class="definition-title">Field</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Def]</strong>
+    <strong class="callout-title">Field</strong>
   </div>
 
 A field is a set $\mathbb{F}$ paired with two binary operations:
@@ -55,10 +55,10 @@ the field axioms holds also for $(\mathbb{F'}, +, \cdot)$. In this case, $\mathb
 
 An important concept when using fields in for cryptosystems, is the one of **characteristic**.
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Def]</strong>
-    <strong class="definition-title">Characteristic</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Def]</strong>
+    <strong class="callout-title">Characteristic</strong>
   </div>
 
 The characteristic of a field $\mathbb{F}$ is defined as the smallest
@@ -87,10 +87,10 @@ $\forall x \in \mathbb{F}_p$ we have:
 When working with prime fields, an important concept already familiar for most of the people is the
 one of square numbers.
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Def]</strong>
-    <strong class="definition-title">Quadratic residue</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Def]</strong>
+    <strong class="callout-title">Quadratic residue</strong>
   </div>
 
 Let $p$ be a prime number and $\mathbb{F}_p$ a prime field. $x \in \mathbb{F}_P$ is called square

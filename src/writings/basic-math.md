@@ -25,9 +25,9 @@ If that $c$ exists, then we write $b \mid a$, otherwise $b \nmid a$.
 Despite we are used to consider the concept of division fairly simple, it plays
 a fundamental role in modern cryptography and it deserve additional attention.
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Proposition]</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Proposition]</strong>
   </div>
 
 Let $a, b, c \in \mathbb{Z}$ be three integers:
@@ -42,10 +42,10 @@ Let $a, b, c \in \mathbb{Z}$ be three integers:
 Amongst all the divisors that are in common between two numbers, we are
 particularly interested in the **greatest common division**.
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Definition]</strong>
-    <strong class="definition-title">Greatest common division</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Definition]</strong>
+    <strong class="callout-title">Greatest common division</strong>
   </div>
 
 Let $a, b \in \mathbb{Z}$ be two integers, we define the greatest common divisor
@@ -83,11 +83,11 @@ This equality states that the greatest common divisor between two numbers, is
 equal to the greatest common divisor between the lowest of the two, and the
 reminder of their division.
 
-<div class="definition">
+<div class="callout">
 
-  <div class="definition-header">
-    <strong class="definition-type">[Theorem]</strong>
-    <strong class="definition-title">The Euler Algorithm</strong>
+  <div class="callout-header">
+    <strong class="callout-type">[Theorem]</strong>
+    <strong class="callout-title">The Euler Algorithm</strong>
   </div>
 
 Let $a$ and $b$ two positive numbers in $\mathbb{Z}$ such that $a \ge b$. We can
@@ -116,10 +116,10 @@ From the application of the Euclidean algorithm, we can obtain another important
 theorem for cryptography, which allows us to write the $\gcd(a,b)$ as a linear
 combination of $a$ and $b$.
 
-<div class="definition">
-  <div class="definition-header">
-    <strong class="definition-type">[Theorem]</strong>
-    <strong class="definition-title">Extended Euclidean Algorithm</strong>
+<div class="callout">
+  <div class="callout-header">
+    <strong class="callout-type">[Theorem]</strong>
+    <strong class="callout-title">Extended Euclidean Algorithm</strong>
   </div>
 
 Let $a$ and $b$ two positive numbers in $\mathbb{Z}$. The following combination

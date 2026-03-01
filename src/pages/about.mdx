@@ -1,6 +1,5 @@
 ---
 layout: ../layouts/Base.astro
-
 ---
 
 import Base from "../layouts/Base.astro";
@@ -14,39 +13,36 @@ import AboutImage from "../images/me-and-topolino.jpg";
 
 <Decorator symbol="*" />
 <div class="about-body">
-	__Eternal Spring__ is a blog about the _random things_ I learn and experiment 
-	with related to mathematics and cryptography.
+	__Eternal Spring__ is a blog where I explore ideas in mathematics, cryptography,
+	and martial arts.
 
+	I’m Stefano, a software engineer based in Berlin with a focus on distributed systems
+	and cryptography. I enjoy building clean, maintainable,
+	and secure systems that make people’s lives better
 
-	I'm Stefano, a software engineer based in Berlin interested in distributed systems,
-	cryptography, and all the math around them. I like ~~writing~~ asking LLMs to write clean,
-	maintainable, and secure code which make people life better.
+  <figure class="figure">
+  	<div class="figure-container">
+  	  <Image
+  		class="about-image"
+  		src={AboutImage}
+  		alt="A shot of me and Topolino."
+  		format="webp"
+  		quality={80}
+  	  />
+  	  <figcaption>Figure 1: A shot of me and Topolino.</figcaption>
+  	</div>
+  </figure>
 
-
-	<figure class="figure">
-		<div class="figure-container">
-		  <Image
-			class="about-image"
-			src={AboutImage}
-			alt="A shot of me and Topolino."
-			format="webp"
-			quality={80}
-		  />
-		  <figcaption class="figure-caption">
-			<p>Figure 1: A shot of me and Topolino.</p>
-		  </figcaption>
-		</div>
-	</figure>
-
-	In my career I contributed to the development of multiple components of a blockchain system. At
-    [Noble](https://github.com/noble-assets/noble) I helped shaping the infrastructure for
-	world payments. I've contributed to a stablecoincoins automate-market maker (AMM) based on the
+	In my career I contributed to the development of multiple components of a blockchain system.
+	At [Noble](https://github.com/noble-assets/noble) I helped shaping the infrastructure for
+	cross-border payments. I've contributed to a stablecoincoins automate-market maker (AMM) based on the
 	stableswap invariant, and designed an abstraction layer for automated cross-chain routing on top
-	the Inter-Blockchain Communication (IBC) protocol, the Circle Cross-Chain Transfer Protocol
-    (CCTP), and Hyperlane. Before this experience, I helped Altiplanic supporting the [Ethereum
-	Virtual Machine (EVM)](https://github.com/evmos/evmos) in systems based on the Cosmos SDK.
+	the Inter-Blockchain Communication (IBC) protocol,
+	the Circle Cross-Chain Transfer Protocol (CCTP), and Hyperlane.
+	Before this experience, I helped Altiplanic supporting the
+	[Ethereum Virtual Machine (EVM)](https://github.com/evmos/evmos) in systems based on the Cosmos SDK.
 
-    Products I worked on, facilitated over \$100M in stablecoins transfer and \$1B in exchanged volumes.
+  Products I worked on, facilitated over \$100M in stablecoins transfer and \$1B in exchanged volumes.
 
 	Before developing my passion for computers and finance, I did research at the intersection
 	of machine-learning and aerospace structural analysis. I was fascinated by instability
