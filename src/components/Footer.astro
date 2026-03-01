@@ -8,13 +8,9 @@ const currentYear = new Date().getFullYear();
 <footer>
   <div class="footer-container">
     <SocialLinks links={SOCIAL_LINKS} />
-    <div class="footer-gpg">
-      <a href="/public/pubkey.asc" download="stepit_pubkey.asc">pubkey.asc</a>
-    </div>
-    <div class="footer-copyright">
-      <span class="spacer footer-spacer footer-spacer--left" aria-hidden="true">×</span>
-      <span class="copyright">© {currentYear} Stefano Pitton</span>
-      <span class="spacer footer-spacer footer-spacer--right" aria-hidden="true">*</span>
-    </div>
+    <a class="footer-gpg" href="/public/pubkey.asc" download="stepit_pubkey.asc"
+      >pubkey.asc</a
+    >
+    <small class="footer-copyright"> © {currentYear} Stefano Pitton </small>
   </div>
 </footer>
