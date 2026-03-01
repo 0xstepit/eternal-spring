@@ -1,15 +1,16 @@
 ---
 import { NAV_LINKS } from "@/config";
 import NavigationLinks from "./NavigationLinks.astro";
-import Logo from "./Logo.astro";
 
 const [logo, ...links] = NAV_LINKS;
+const logoName = logo.name.toLocaleLowerCase().split(" ").join("-");
 ---
 
-<nav class="navigation">
-  <div class="logo-container">
-    <Logo name={logo.name} path={logo.path} />
-  </div>
-  <NavigationLinks links={links} />
-  <div class="navigation-spacer spacer">+</div>
-</nav>
+<header>
+  <nav class="navigation">
+    <a class="logo-link" href={logo.path}>
+      ~/.{logoName}
+    </a>
+    <NavigationLinks links={links} />
+  </nav>
+</header>

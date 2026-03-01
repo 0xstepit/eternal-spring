@@ -1,67 +1,42 @@
 /* ============================== */
-/* === Header                     */
+/* Header                         */
 /* ============================== */
 
 header {
-  z-index: 100;
-  /* position: sticky; */
-  top: 0;
-
   min-height: var(--header-height);
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: var(--color-background);
-  font-family: var(--font-main);
 }
 
 .navigation {
   width: min(100%, var(--content-max-width));
-  height: 100%;
-  padding: calc(1 * var(--spacing-unit));
+  padding: var(--spacing-unit) 0;
   margin: 0 auto;
   display: flex;
   align-items: center;
   border-bottom: var(--border-size) solid var(--color-text);
 }
 
-.logo-container,
-.navigation-links,
-.navigation-spacer {
-  flex-basis: 0;
-  flex-grow: 2;
-}
-
-.navigation-links {
-  width: 100%;
-  flex-grow: 3;
-}
-
-.logo-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.navigation-logo {
-  text-decoration: none;
-}
-
 .logo-link {
+  flex: 2 0 0;
   color: var(--color-background);
   background-color: var(--color-text);
-  text-decoration: none;
-  letter-spacing: 0.05em;
   padding: var(--spacing-quarter) var(--spacing-half);
+  text-align: center;
 }
 
 .navigation-list {
+  flex: 4 0 0;
   display: flex;
   justify-content: space-evenly;
 }
 
-.navigation-spacer {
+.navigation::after {
+  content: "+";
+  color: var(--color-dark-grey);
+  flex: 2 0 0;
   text-align: right;
+  font-size: 1.2rem;
+  font-weight: 600;
 }

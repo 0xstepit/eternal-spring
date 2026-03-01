@@ -10,25 +10,23 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<div class="navigation-links">
-  <ul class="navigation-list">
-    {
-      links.map((link) => {
-        return (
-          <li class="principal-link">
-            <a
-              href={link.path}
-              class={
-                currentPath === link.path
-                  ? "navigation-link active"
-                  : "navigation-link"
-              }
-            >
-              {link.name}
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
-</div>
+<ul class="navigation-list">
+  {
+    links.map((link) => {
+      return (
+        <li class="principal-link">
+          <a
+            href={link.path}
+            class={
+              currentPath === link.path
+                ? "navigation-link active"
+                : "navigation-link"
+            }
+          >
+            {link.name}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
