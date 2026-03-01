@@ -400,8 +400,7 @@ figure.table-figure > figcaption {
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-text);
+  background: var(--color-lighter-cyan);
 }
 
 /* Code */
