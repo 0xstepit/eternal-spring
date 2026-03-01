@@ -11,7 +11,7 @@ header {
 
 .navigation {
   width: min(100%, var(--content-max-width));
-  padding: var(--spacing-unit) 0;
+  padding: var(--spacing-unit);
   margin: 0 auto;
   display: flex;
   align-items: center;

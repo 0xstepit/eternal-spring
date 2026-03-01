@@ -15,9 +15,7 @@ const month = getMonthShort(date);
 const day = getDay(date);
 ---
 
-<article class="post-card">
-  <div class="post-header-oneline">
-    <time class="post-date italic smaller">{`${month} ${day}`}</time>
-    <a href={url} class="post-link">{title}</a>
-  </div>
-</article>
+<li class="post-header-oneline">
+  <time class="post-date italic smaller">{`${month} ${day}`}</time>
+  <a href={url} class="post-link">{title}</a>
+</li>
