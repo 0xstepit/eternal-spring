@@ -1,6 +1,17 @@
-import type { NavigationLinks, SocialLinks, SiteConfig } from "@/types.ts";
+import type {
+  NavigationLinks,
+  SocialLinks,
+  SiteConfig,
+  StyleConfig,
+} from "@/types.ts";
 
 import { WritingOrders } from "@/types.ts";
+
+// Defines styles and UI elements in the blog.
+export const STYLE_CONFIG: StyleConfig = {
+  // Number of decorators repetition.
+  decoratorNr: 3,
+};
 
 // Defines the the configuration data for the website.
 export const SITE_CONFIG: SiteConfig = {
@@ -11,6 +22,7 @@ export const SITE_CONFIG: SiteConfig = {
   description: "Incomplete notes of a curious engineer.",
   language: "en-US",
   writingOrder: WritingOrders.Newest,
+  styleConfig: STYLE_CONFIG,
 };
 
 // Defines the navigation links used in the navigation bar. The first element is used as

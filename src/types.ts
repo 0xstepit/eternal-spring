@@ -26,6 +26,11 @@ export type SiteConfig = {
   description: string;
   language: string;
   writingOrder: WritingOrders;
+  styleConfig: StyleConfig;
+};
+
+export type StyleConfig = {
+  decoratorNr: number;
 };
 
 // Defines the data needed to refer to a writing.

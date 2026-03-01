@@ -341,6 +341,7 @@ a {
   color: var(--color-dark-grey);
   text-align: left;
   width: 100%;
+  margin: 0 0 2 * var(--spacing-unit) 0;
 }
 
 /* Code block with title/caption (rehype-pretty-code figure) */
@@ -374,7 +375,8 @@ figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
   padding-top: var(--spacing-half);
 }
 
-figcaption[data-rehype-pretty-code-caption] {
+figcaption {
+  width: 100%;
   font-size: 0.875rem;
   font-style: italic;
   color: var(--color-dark-grey);
@@ -522,9 +524,10 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   text-align: center;
   color: var(--color-dark-grey);
   justify-content: center;
-  gap: var(--spacing-unit);
+  gap: var(--spacing-half);
   margin-bottom: var(--spacing-double);
   font-size: 1.2rem;
+  font-weight: 600;
 }
 
 table {
@@ -538,7 +541,7 @@ ol {
   overflow-x: auto;
 }
 
-.definition {
+.callout {
   background-color: var(--color-light-grey);
   padding: var(--spacing-unit);
   border: var(--border-size) solid var(--color-grey);
@@ -546,20 +549,20 @@ ol {
   margin: var(--spacing-unit) 0;
 }
 
-.definition-header {
-  border-bottom: var(--border-size);
+.callout-header {
+  padding-bottom: var(--spacing-half);
 }
 
-.definition-type {
+.callout-type {
   color: var(--color-dark-grey);
 }
 
-.definition ol,
-.definition ul {
+.callout ol,
+.callout ul {
   overflow-x: visible;
 }
 
-.definition li p {
+.callout li p {
   margin-bottom: 0;
 }
 
