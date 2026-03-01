@@ -61,16 +61,6 @@ const neighbors = await getWritingNeighbors(post.id);
         >
       </div>
 
-      {
-        post.data.tags.length > 0 && (
-          <ul class="post-tags smaller">
-            {post.data.tags.map((tag: string) => (
-              <li class="post-tag tag-container">{tag.toLocaleUpperCase()}</li>
-            ))}
-          </ul>
-        )
-      }
-
       {post.data.summary && <p class="article-summary">{post.data.summary}</p>}
     </div>
 
@@ -79,6 +69,16 @@ const neighbors = await getWritingNeighbors(post.id);
     <div class="article-content">
       <Content />
     </div>
+
+    {
+      post.data.tags.length > 0 && (
+        <ul class="post-tags smaller">
+          {post.data.tags.map((tag: string) => (
+            <li class="post-tag tag-container">{tag.toLocaleUpperCase()}</li>
+          ))}
+        </ul>
+      )
+    }
 
     <div class="article-footer smaller">
       <a href={`${SITE_CONFIG.repo}/blob/main/src/writings/${post.id}.md`}>

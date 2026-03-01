@@ -239,8 +239,7 @@ main {
 .post-tags {
   display: flex;
   justify-content: center;
-  padding: var(--spacing-unit) 0 0 0;
-  margin-bottom: var(--spacing-unit);
+  padding: var(--spacing-double);
   gap: var(--spacing-half);
 }
 
