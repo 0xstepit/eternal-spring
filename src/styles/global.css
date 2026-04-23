@@ -104,6 +104,7 @@ thead {
 th,
 td {
   padding: var(--spacing-half) var(--spacing-unit);
+  font-size: clamp(0.875rem, 0.75rem + 0.4vw, 1rem);
   text-align: left;
   border-bottom: var(--border-size) solid var(--color-grey);
   white-space: nowrap;
