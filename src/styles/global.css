@@ -195,6 +195,12 @@ main {
   gap: var(--spacing-half);
 }
 
+.article-summary {
+  display: flex;
+  gap: var(--spacing-half);
+  color: var(--color-dark-grey);
+}
+
 .article-content {
   padding-bottom: calc(2 * var(--spacing-unit));
 }
@@ -266,6 +272,13 @@ a {
   color: var(--color-accent);
   text-decoration: none;
   transition: color 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto var(--spacing-unit);
 }
 
 /* OTHER */
@@ -473,7 +486,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 .decorator {
   display: flex;
   text-align: center;
-  color: var(--color-dark-grey);
+  color: var(--color-grey);
   justify-content: center;
   gap: var(--spacing-half);
   margin-bottom: var(--spacing-double);

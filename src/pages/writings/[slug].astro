@@ -60,8 +60,14 @@ const neighbors = await getWritingNeighbors(post.id);
           ></span
         >
       </div>
-
-      {post.data.summary && <p class="article-summary">{post.data.summary}</p>}
+      {
+        post.data.summary && (
+          <p class="article-summary">
+            {" "}
+            <strong>Summary:</strong> {post.data.summary}
+          </p>
+        )
+      }
     </div>
 
     <Decorator symbol="#" />
