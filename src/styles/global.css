@@ -420,7 +420,7 @@ pre[data-language]::before {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--color-grey);
-  padding: 0 var(--spacing-unit);
+  padding: 0 var(--spacing-half);
   margin-bottom: var(--spacing-unit);
   line-height: 1;
   pointer-events: none;
@@ -450,7 +450,7 @@ figure[data-rehype-pretty-code-figure]:hover button.rehype-pretty-copy {
 }
 
 pre [data-line] {
-  padding: 0 var(--spacing-unit);
+  padding: 0 var(--spacing-half);
 }
 pre > code {
   counter-reset: line;
@@ -461,8 +461,8 @@ pre > code {
   width: 100%;
   background-color: var(--color-accent-faint);
   border-left: 2px solid var(--color-accent);
-  padding: 0 var(--spacing-unit);
-  padding-left: calc(var(--spacing-unit) - 2px);
+  padding: 0 var(--spacing-half);
+  padding-left: calc(var(--spacing-half) - 2px);
 }
 
 code[data-line-numbers] {
@@ -476,7 +476,7 @@ code > [data-line]::before {
   /* Other styling */
   display: inline-block;
   width: 0.75rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   text-align: right;
   color: var(--color-grey);
 }
