@@ -511,6 +511,7 @@ ul,
 ol {
   padding: 0 3rem;
   overflow-x: auto;
+  margin-bottom: var(--spacing-unit);
 }
 
 .callout {
