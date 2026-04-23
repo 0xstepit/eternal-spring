@@ -72,6 +72,7 @@ h2,
 h3,
 h4,
 h5 {
+  margin-top: var(--spacing-double);
   padding-bottom: var(--spacing-unit);
   border-bottom: var(--border-size) solid var(--color-grey);
 }
@@ -89,6 +90,8 @@ table {
   display: block;
   overflow-x: auto;
   background-color: var(--color-background);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 tbody {
