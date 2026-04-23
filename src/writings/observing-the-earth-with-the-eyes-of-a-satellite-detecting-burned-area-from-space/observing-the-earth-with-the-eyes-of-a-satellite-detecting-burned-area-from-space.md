@@ -39,7 +39,7 @@ hope you enjoy reading this post as much as I enjoyed learning the concepts
 behind it.
 
 This article is accompanied by scripts and a notebook you can find in the
-[burn-area-detection repo](https://github.com/0xstepit/burn-area-detection)
+[burn-area-detection repo](https://github.com/0xstepit/burn-area-detection).
 
 ## GIS and Satellites
 
@@ -154,8 +154,6 @@ different tiles.
 
 ![tiling-system](tiling-system.png)
 
-## Classic burn detection techniques
-
 ### The normalized difference vegetation index
 
 The **Normalized Difference Vegetation Index (NDVI)** is a metric used to
@@ -241,9 +239,7 @@ table:
 The burn severity is a measure of how the fire intensity affected the
 functioning of the ecosystem in the area affected.
 
-## Investigation
-
-### Download data
+## Download data
 
 The most direct approach to get Sentinel-2 data is through the
 [Copernicus browser](https://browser.dataspace.copernicus.eu/?zoom=5&lat=50.16282&lng=20.78613&themeId=DEFAULT-THEME&demSource3D=%22MAPZEN%22&cloudCoverage=30&dateMode=SINGLE).

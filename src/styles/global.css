@@ -326,11 +326,11 @@ figure[data-rehype-pretty-code-figure] {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-dark-grey);
   background-color: var(--color-light-grey);
   border: var(--border-size) solid var(--color-grey);
-  border-bottom: none;
-  border-radius: 3px 3px 0 0;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
   padding: var(--spacing-half) var(--spacing-unit);
 }
 
@@ -339,12 +339,26 @@ figure[data-rehype-pretty-code-figure] > pre {
   margin-bottom: 0;
 }
 
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title]) {
+  display: flex;
+  flex-direction: column;
+}
+
 figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
   > pre {
-  border-top: none;
-  border-radius: 0 0 3px 3px;
-  margin-top: -1px;
-  padding-top: var(--spacing-half);
+  order: 1;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
+  > [data-rehype-pretty-code-title] {
+  order: 2;
+}
+
+figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
+  > [data-rehype-pretty-code-caption] {
+  order: 3;
 }
 
 figcaption {
@@ -412,11 +426,6 @@ pre[data-language]::before {
   user-select: none;
 }
 
-/* Hide language label when title figcaption is present */
-figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
-  > pre[data-language]::before {
-  display: none;
-}
 
 /* Copy button - positioned relative to figure (escapes pre's overflow scroll) */
 figure[data-rehype-pretty-code-figure] button.rehype-pretty-copy {
