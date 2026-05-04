@@ -10,23 +10,6 @@ const { neighbors } = Astro.props;
 
 <nav class="neighbor-writing-container" aria-label="Post navigation">
   {
-    neighbors.previous && (
-      <a
-        class="neighbor-writing neighbor-writing-left"
-        href={`/writings/${neighbors.previous?.url}`}
-        aria-label={`Previous post: ${neighbors.previous?.title}`}
-      >
-        <img
-          src="/icons/larrow.svg"
-          alt=""
-          class="nav-icon"
-          aria-hidden="true"
-        />
-        <span>{neighbors.previous?.title}</span>
-      </a>
-    )
-  }
-  {
     neighbors.next && (
       <a
         class="neighbor-writing neighbor-writing-right"
@@ -40,6 +23,23 @@ const { neighbors } = Astro.props;
           class="nav-icon"
           aria-hidden="true"
         />
+      </a>
+    )
+  }
+  {
+    neighbors.previous && (
+      <a
+        class="neighbor-writing neighbor-writing-left"
+        href={`/writings/${neighbors.previous?.url}`}
+        aria-label={`Previous post: ${neighbors.previous?.title}`}
+      >
+        <img
+          src="/icons/larrow.svg"
+          alt=""
+          class="nav-icon"
+          aria-hidden="true"
+        />
+        <span>{neighbors.previous?.title}</span>
       </a>
     )
   }

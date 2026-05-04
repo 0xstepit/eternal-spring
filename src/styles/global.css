@@ -231,25 +231,32 @@ main {
 
 .neighbor-writing-container {
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-unit);
   line-height: var(--line-height-tight);
   color: var(--color-grey);
 }
 
 .neighbor-writing {
   display: flex;
-  align-items: center;
   gap: var(--spacing-unit);
-  flex: 1 0 0;
+  align-items: center;
 }
 
 .neighbor-writing-right {
-  justify-content: flex-end;
+  justify-content: right;
   text-align: right;
+}
+
+.neighbor-writing-left {
+  justify-content: left;
+  text-align: left;
 }
 
 .nav-icon {
   width: var(--icon-size);
   height: var(--icon-size);
+  margin: 0;
 }
 
 .writings-container {
@@ -450,7 +457,6 @@ pre[data-language]::before {
   pointer-events: none;
   user-select: none;
 }
-
 
 /* Copy button - positioned relative to figure (escapes pre's overflow scroll) */
 figure[data-rehype-pretty-code-figure] button.rehype-pretty-copy {
