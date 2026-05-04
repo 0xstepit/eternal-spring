@@ -208,8 +208,7 @@ main {
 }
 
 .article-meta {
-  display: flex;
-  gap: var(--spacing-half);
+  display: block;
 }
 
 .article-summary {
