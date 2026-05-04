@@ -8,13 +8,14 @@ const writings = defineCollection({
       title: z.string(),
       summary: z.string().default(""),
       author: z.string().default("Anon"),
+      created: z.date(),
       modified: z.date(),
       tags: z.array(z.string()),
       "to-publish": z.boolean().default(false),
     })
-    .transform(({ modified, ...rest }) => ({
+    .transform(({ created, ...rest }) => ({
       ...rest,
-      date: modified,
+      date: created,
     })),
 });
 
