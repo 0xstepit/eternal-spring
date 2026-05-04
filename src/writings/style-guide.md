@@ -2,8 +2,11 @@
 title: "Style Guide"
 summary: "A comprehensive showcase of all styling elements available in this blog."
 author: "Stefano Francesco Pitton"
-modified: 2025-01-18
+slug: "time"
 tags: [style, guide, reference]
+related: []
+created: 2025-01-18
+modified: 2025-01-18
 to-publish: true
 ---
 
