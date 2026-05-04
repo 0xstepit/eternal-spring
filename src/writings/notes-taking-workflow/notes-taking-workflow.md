@@ -3,7 +3,7 @@ author: stepit
 title: 'Notes taking workflow'
 slug: 'notes-taking-workflow'
 created: 2026-03-23
-modified: 2026-03-23
+modified: 2026-04-26
 summary: 'How I manage my knowledge base with Neovim, Zotero, and a bit of Lua'
 category: 'personal'
 tags: [workflow]
@@ -61,6 +61,7 @@ Below a list of tools I used in my notes taking and sharing workflow:
   publish writings or notes I want to share.
 - [Pandoc](https://pandoc.org/): a document converter used to convert from `.md`
   notes to `.pdf`.
+- [tmux](http://github.com/tmux/tmux/wiki/): a terminal multiplexer.
 
 Pandoc and the blog are something that I personal use to share on the web or
 specific file format easily printable, but are not required for a simple note
@@ -112,6 +113,13 @@ add the citation into the file.
 
 - Hook into metadata during conversion and customization.
 
+### tmux
+
+A very useful command in tmux while you are writing articles and coding, is
+`<prefix-key> + z`. This command allows you to focus full terminal on the
+currently active pane. A found it very handy when I want to work on a specific
+task and I don't have to switch between coding and notes frequently.
+
 ## Env variable
 
 - Env variable pointing to the folder I used for WIP notes and completed notes
@@ -131,3 +139,19 @@ add the citation into the file.
 
 - **Touch typing**
 - **Split keyboard**
+- **aerospace**: if you are a MacOS user I strongly recommend to install
+  aerospace. It is an open-source project inspired on the classic Linux i3 tool
+  which provide a automatic tiling of you window. The tool is very handy since
+  it allows to have side-by-side multiple software, like for example a terminal
+  on the left where you are writing notes about an article you have open in you
+  Zotero library on the right. With Aerospace you can move windows on different
+  workspace, which is the virtual equivalent of MacOS desktop, and move between
+  different placing of the windows. A common workflow I find myself using very
+  frequently is from a side-by-side configuration i cited a few lines above, to
+  the stacked visualization to have my terminal with the text in the center of
+  the screen. You can switch between the two configurations with a single
+  keystroke! And well, if you are on Linux I would recommend you i3..
+
+![split-screen-apps](split-screen-apps.png)
+
+![full-screen-apps](full-screen-apps.png)
