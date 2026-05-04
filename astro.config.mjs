@@ -5,6 +5,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { rehypeFigure } from "./src/plugins/rehype-figure.mjs";
 
 const prettyCodeOptions = {
   theme: "github-light",
@@ -27,7 +28,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
     extendDefaultPlugins: true,
-    rehypePlugins: [rehypeKatex, [rehypePrettyCode, prettyCodeOptions]],
+    rehypePlugins: [rehypeKatex, rehypeFigure, [rehypePrettyCode, prettyCodeOptions]],
     remarkPlugins: [remarkMath],
   },
   devToolbar: {

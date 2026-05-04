@@ -46,6 +46,19 @@ main ol ol ol {
   list-style: lower-roman;
 }
 
+.article-content [data-footnotes] ol,
+.article-content h2 + ol,
+.article-content h3 + ol {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.article-content [data-footnotes] ol li p,
+.article-content h2 + ol li p,
+.article-content h3 + ol li p {
+  display: inline;
+}
+
 main li:not(.tag-container) {
   margin-bottom: var(--spacing-half);
   line-height: var(--line-height-base);
@@ -320,6 +333,15 @@ img {
   margin: 0 0 calc(2 * var(--spacing-unit)) 0;
 }
 
+/* Image with caption */
+figure:has(> img) {
+  margin-bottom: var(--spacing-unit);
+}
+
+figure:has(> img) img {
+  margin-bottom: 0;
+}
+
 /* Code block with title/caption (rehype-pretty-code figure) */
 figure[data-rehype-pretty-code-figure] {
   position: relative;
@@ -370,7 +392,7 @@ figcaption {
   font-size: 0.875rem;
   font-style: italic;
   color: var(--color-dark-grey);
-  padding: var(--spacing-half) 0;
+  padding: var(--spacing-quarter) 0;
   text-align: left;
 }
 
@@ -502,6 +524,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   color: var(--color-grey);
   justify-content: center;
   gap: var(--spacing-half);
+  margin-top: var(--spacing-double);
   margin-bottom: var(--spacing-double);
   font-size: 1.2rem;
   font-weight: 600;
