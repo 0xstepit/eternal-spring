@@ -3,7 +3,7 @@ author: stepit
 title: 'I got laid off'
 slug: 'i-got-laid-off'
 created: 2026-05-01
-modified: 2026-05-04
+modified: 2026-05-06
 summary: ''
 category: 'personal'
 tags: [work]
@@ -17,7 +17,7 @@ truly am. Now, it's time to move on. But, before doing so, I believe it is worth
 spending a couple of minutes to reflect on what I did in the past, and what I
 want to do in the future.
 
-![berlin-sky](berlin-sky.jpeg 'Figure 1: The sky in Berlin.')
+![berlin-sky](berlin-sky.jpeg 'Figure 1: The sky in Berlin (Berlin, Germany).')
 
 I started my professional career working in a small construction business. I was
 lost after high school, but fortunately, my father had a small local business
@@ -102,7 +102,7 @@ users instead of abstractions, and interacting with nature. I'm not sure where I
 will go, but I'm very excited about the journey in front of me, and I look
 forward to sharing what I find along the way.
 
-![bikepacking-in-berlin](bikepacking-in-berlin.jpeg 'Figure 2: Bikepacking in the north of Berlin.')
+![bikepacking-in-berlin](bikepacking-in-berlin.jpeg 'Figure 2: Bikepacking in Brandenburg (Wandlitz, Germany).')
 
 **P.S.**: I will probably try to leverage the experience I gained in applied
 math and software design to work on satellite imagery analysis for Earth
