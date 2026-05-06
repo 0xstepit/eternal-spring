@@ -53,6 +53,11 @@ main ol ol ol {
   list-style-position: inside;
 }
 
+/* Force Safari to use the text icon and not emoji. */
+a[data-footnote-backref] {
+  font-variant-emoji: text;
+}
+
 .article-content [data-footnotes] ol li p,
 .article-content h2 + ol li p,
 .article-content h3 + ol li p {
@@ -200,11 +205,14 @@ main {
 .post-link {
   flex-basis: 0;
   flex-grow: 9;
+  line-height: var(--line-height-tight);
 }
 
 .article-header {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .article-meta {
@@ -213,6 +221,8 @@ main {
 
 .article-summary {
   display: flex;
+  justify-content: center;
+  text-align: center;
   gap: var(--spacing-half);
   color: var(--color-dark-grey);
 }
@@ -304,39 +314,8 @@ img {
   margin: 0 auto var(--spacing-unit);
 }
 
-/* OTHER */
-
-.figure {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.figure-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-image,
-.index-image {
-  width: 100%;
-  height: auto;
+figure > img {
   border: var(--border-size) solid var(--color-text);
-}
-
-.about-image {
-  margin-top: var(--spacing-unit);
-}
-
-.figure-caption {
-  color: var(--color-dark-grey);
-  text-align: left;
-  width: 100%;
-  margin: 0 0 calc(2 * var(--spacing-unit)) 0;
 }
 
 /* Image with caption */
@@ -348,7 +327,6 @@ figure:has(> img) img {
   margin-bottom: 0;
 }
 
-/* Code block with title/caption (rehype-pretty-code figure) */
 figure[data-rehype-pretty-code-figure] {
   position: relative;
   margin: 0 0 var(--spacing-unit) 0;

@@ -56,15 +56,17 @@ const neighbors = await getWritingNeighbors(post.id);
       <h1>{post.data.title}</h1>
 
       <div class="article-meta">
-        <span>Published by</span>
-        <span class="article-author bold">{post.data.author}</span>
-        <span>on</span>
-        <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
-        <span class="article-meta-date italic">
-          <a href={`https://www.onthisday.com/date/${year}/${month}/${day}`}
-            ><time>{formattedDate}</time></a
-          ></span
-        >
+        <div>
+          <span>Published by</span>
+          <span class="article-author bold">{post.data.author}</span>
+          <span>on</span>
+          <!-- {headings.map((h) => <div>{h.slug}</div>)} -->
+          <span class="article-meta-date italic">
+            <a href={`https://www.onthisday.com/date/${year}/${month}/${day}`}
+              ><time>{formattedDate}</time></a
+            ></span
+          >
+        </div>
         {
           modified && (
             <span class="article-meta-date italic">
@@ -72,15 +74,15 @@ const neighbors = await getWritingNeighbors(post.id);
             </span>
           )
         }
+        {
+          post.data.summary && (
+            <p class="article-summary">
+              {" "}
+              <strong>Summary:</strong> {post.data.summary}
+            </p>
+          )
+        }
       </div>
-      {
-        post.data.summary && (
-          <p class="article-summary">
-            {" "}
-            <strong>Summary:</strong> {post.data.summary}
-          </p>
-        )
-      }
     </div>
 
     <Decorator symbol="#" />
