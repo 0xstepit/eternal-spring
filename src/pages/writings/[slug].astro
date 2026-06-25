@@ -48,7 +48,7 @@ const modified = modifiedDate.getTime() !== postDate.getTime();
 const neighbors = await getWritingNeighbors(post.id);
 ---
 
-<Base pageTitle={post.id} pageStyle={"clean"}>
+<Base pageTitle={post.data.title} pageStyle={"clean"}>
   <article class="article">
     <div class="article-header">
       <!-- https://github.com/0xstepit/eternal-spring/blob/main/src/writings/time.md -->
