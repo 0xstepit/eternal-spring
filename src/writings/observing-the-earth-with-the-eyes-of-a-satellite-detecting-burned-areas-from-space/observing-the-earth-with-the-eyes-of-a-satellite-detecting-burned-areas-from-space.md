@@ -1,11 +1,9 @@
 ---
 author: stepit
-title:
-  'Observing the Earth with the eyes of a satellite: detecting burned areas from
-  space'
-slug: 'observing-the-earth-with-the-eyes-of-a-satellite-detecting-burned-areas-from-space'
+title: 'Observing the Earth with the eyes of a satellite: detecting burned areas from space'
+slug: observing-the-earth-with-the-eyes-of-a-satellite-detecting-burned-areas-from-space
 created: 2026-04-22
-modified: 2026-05-06
+modified: 2026-06-25
 summary: ''
 category: ''
 tags: [aerospace, earth-observation]
@@ -33,7 +31,7 @@ Among the many applications in this field, I've chosen to focus on detecting
 wildfires using satellite data. In particular, we will investigate the
 Achaia-Ilia wildfire that happened in Greece during June 2024. The decision to
 study this event is motivated by the fact that it is fairly recent, and because
-I found a [paper][castro-melgarWildfiresEarlySummer2025] with a good level of
+I found a [paper][castro-melgarwildfiresearlysummer2025] with a good level of
 accuracy, which we can use to gather relevant information and for comparison. I
 hope you enjoy reading this post as much as I enjoyed learning the concepts
 behind it.
@@ -282,9 +280,10 @@ designed with the support for georeferencing in mind.
 
 A better alternative for downloading data is via API. In this context, the
 industry maturated creating a common standard to store and provide geospatial
-information, and this standard is the [**SpatioTemporal Asset Catalog
-(STAC)**][STAC]. In this language, we refer to a specific asset, like a band
-image, as an item. An item is stored in the standard [GeoJSON] format.
+information, and this standard is the
+[**SpatioTemporal Asset Catalog (STAC)**][stac]. In this language, we refer to a
+specific asset, like a band image, as an item. An item is stored in the standard
+[GeoJSON] format.
 
 In understanding how to use the API, we will download a tile containing the
 wildfire happened in Achaia-Ilia. From now on, I strongly recommend to follow
@@ -458,7 +457,7 @@ methods based on convolutional neural networks.
 
 ## Final consideration
 
-- [Earth Lab][Earth Lab: work with the difference normalized burn index]
+- [Earth Lab][earth lab: work with the difference normalized burn index]
   mentions that it is better to mask out the water to avoid false positive. I
   don't find it an issue in the analyzed scene. This is reported also by
   [castro-melgarWildfiresEarlySummer2025], which addresses the issue by using
@@ -472,25 +471,20 @@ methods based on convolutional neural networks.
 
 ## References
 
-1. [Work with the Difference Normalized Burn Index - Using Spectral Remote
-   Sensing to Understand the Impacts of Fire on the
-   Landscape][Earth Lab: work with the difference normalized burn index]
-2. [Wildfires During Early Summer in Greece (2024): Burn Severity and Land Use
-   Dynamics Through Sentinel-2 Data][castro-melgarWildfiresEarlySummer2025]
-3. [Newcomers Earth Observation Guide][ESA introduction]
-4. [What is SWIR? Short-wave infrared data, explained][What is SWIR]
-5. [Normalized Burn Ratio (NBR)][NBR]
-6. [Tiling system]
+1. [Work with the Difference Normalized Burn Index - Using Spectral Remote Sensing to Understand the Impacts of Fire on the Landscape][earth lab: work with the difference normalized burn index]
+1. [Wildfires During Early Summer in Greece (2024): Burn Severity and Land Use Dynamics Through Sentinel-2 Data][castro-melgarwildfiresearlysummer2025]
+1. [Newcomers Earth Observation Guide][esa introduction]
+1. [What is SWIR? Short-wave infrared data, explained][what is swir]
+1. [Normalized Burn Ratio (NBR)][nbr]
+1. [Tiling system]
 
-[Earth Lab: work with the difference normalized burn index]:
-  https://earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-modis/normalized-burn-index-dNBR/
-[castro-melgarWildfiresEarlySummer2025]: https://www.mdpi.com/1999-4907/16/2/268
-[ESA introduction]: https://business.esa.int/newcomers-earth-observation-guide
-[What is SWIR]: https://up42.com/blog/swir-short-wave-infrared-data-explained
-[NBR]:
-  https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio
-[Tiling system]: https://hls.gsfc.nasa.gov/products-description/tiling-system/
-[S2 products]: https://sentiwiki.copernicus.eu/web/s2-products
-[STAC]: https://stacspec.org/en/
-[GeoJSON]: https://en.wikipedia.org/wiki/GeoJSON
-[Rasterio]: https://rasterio.readthedocs.io/en/stable/
+[castro-melgarwildfiresearlysummer2025]: https://www.mdpi.com/1999-4907/16/2/268
+[earth lab: work with the difference normalized burn index]: https://earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-modis/normalized-burn-index-dNBR/
+[esa introduction]: https://business.esa.int/newcomers-earth-observation-guide
+[geojson]: https://en.wikipedia.org/wiki/GeoJSON
+[nbr]: https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio
+[rasterio]: https://rasterio.readthedocs.io/en/stable/
+[s2 products]: https://sentiwiki.copernicus.eu/web/s2-products
+[stac]: https://stacspec.org/en/
+[tiling system]: https://hls.gsfc.nasa.gov/products-description/tiling-system/
+[what is swir]: https://up42.com/blog/swir-short-wave-infrared-data-explained
