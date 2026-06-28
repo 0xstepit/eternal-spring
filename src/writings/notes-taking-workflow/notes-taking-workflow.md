@@ -1,11 +1,11 @@
 ---
 author: stepit
-title: 'Notes taking workflow'
-slug: 'notes-taking-workflow'
+title: Notes taking workflow
+slug: notes-taking-workflow
 created: 2026-03-23
-modified: 2026-04-26
-summary: 'How I manage my knowledge base with Neovim, Zotero, and a bit of Lua'
-category: 'personal'
+modified: 2026-06-24
+summary: How I manage my knowledge base with Neovim, Zotero, and a bit of Lua
+category: personal
 tags: [workflow]
 related: []
 to-publish: true
@@ -119,6 +119,24 @@ A very useful command in tmux while you are writing articles and coding, is
 `<prefix-key> + z`. This command allows you to focus full terminal on the
 currently active pane. A found it very handy when I want to work on a specific
 task and I don't have to switch between coding and notes frequently.
+
+## Handling images
+
+Images are always one of the most important part of notes and articles we write,
+and for this reason it is important to understand how to manage them properly.
+An amazing tool to work with images is the open source tool
+[ImageMagick](https://github.com/imagemagick/imagemagick). We can use
+ImageMagick to get images information like the size and memory requirements:
+
+```sh
+identify <IMAGE_NAME>
+```
+
+Or we can resize an image:
+
+```sh
+magick <IMAGE_NAME> -resize 1200x <NEW_IMAGE_NAME_AND_FORMAT>
+```
 
 ## Env variable
 

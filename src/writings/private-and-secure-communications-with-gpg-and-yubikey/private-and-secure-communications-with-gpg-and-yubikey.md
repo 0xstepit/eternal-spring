@@ -701,7 +701,7 @@ You should add this env variable to the one automatically loaded in every shell
 if you don't want to repeat this setting every time you open a new terminal
 pane. We can see the public key used by the agent with:
 
-```
+```sh
 ssh-add -L
 ```
 
