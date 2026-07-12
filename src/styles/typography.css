@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: var(--font-main);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 em,
@@ -53,7 +53,7 @@ h5,
 }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Heading scale using ~1.2 ratio for visual harmony */
