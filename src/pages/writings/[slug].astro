@@ -76,10 +76,7 @@ const neighbors = await getWritingNeighbors(post.id);
         }
         {
           post.data.summary && (
-            <p class="article-summary">
-              {" "}
-              <strong>Summary:</strong> {post.data.summary}
-            </p>
+            <p class="article-summary"> {post.data.summary}</p>
           )
         }
       </div>
