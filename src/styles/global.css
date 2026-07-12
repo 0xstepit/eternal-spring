@@ -309,6 +309,8 @@ a {
 
 img {
   max-width: 100%;
+  max-height: 70vh;
+  width: auto;
   height: auto;
   display: block;
   margin: 0 auto var(--spacing-unit);
@@ -320,7 +322,9 @@ figure > img {
 
 /* Image with caption */
 figure:has(> img) {
-  margin-bottom: var(--spacing-unit);
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto var(--spacing-unit);
 }
 
 figure:has(> img) img {
@@ -519,7 +523,7 @@ table {
 
 ul,
 ol {
-  padding: 0 3rem;
+  padding: 0 1.5rem;
   overflow-x: auto;
   margin-bottom: var(--spacing-unit);
 }
@@ -630,7 +634,7 @@ p:has(> .katex-display:only-child) > .katex-display {
 
 @media (max-width: 700px) {
   :root {
-    --line-height-base: 1.6;
+    --line-height-base: 2;
   }
 
   .navigation {
