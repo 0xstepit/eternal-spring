@@ -316,9 +316,10 @@ img {
   margin: 0 auto var(--spacing-unit);
 }
 
-figure > img {
-  border: var(--border-size) solid var(--color-text);
-}
+/* figure > img { */
+/*   border: var(--border-size) solid var(--color-text); */
+/* } */
+/**/
 
 /* Image with caption */
 figure:has(> img) {
